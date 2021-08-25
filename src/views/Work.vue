@@ -142,7 +142,7 @@ export default {
       roundAnimation.style.width = array[200] / 3 + "rem";
     },
     loadSong(song) {
-      this.$refs.audio.src = `../assets/tracks/${song}.mp3`;
+      this.$refs.audio.src = require(`../assets/tracks/${song}.mp3`);
       const player = document.querySelector(".player");
       player.style.backgroundImage = `url(../assets/img/${song}.svg)`;
     },
@@ -151,7 +151,7 @@ export default {
       const img = document.querySelector(".feedback__nameimg-img-src");
       const name = document.querySelector(".feedback__nameimg-name");
       feedbackText.innerHTML = `${el.text}`;
-      img.src = `../assets/img/${el.picture}`;
+      img.src = require(`../assets/img/${el.picture}`);
       name.innerHTML = `${el.name}`;
     },
     prevSong() {
