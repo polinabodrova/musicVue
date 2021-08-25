@@ -10,7 +10,10 @@
           alt=""
         />
       </div>
-      <ul class="nav-links" v-bind:class="{ ['nav-active']: toggleNav }">
+      <ul
+        class="nav-links"
+        v-bind:class="{ ['nav-active']: toggleNav, transform: toggleNav }"
+      >
         <router-link
           v-bind:class="{
             ['animate__animated animate__fadeInRight delay1']: toggleNav,
@@ -278,13 +281,16 @@ nav {
     flex-direction: column;
     align-items: center;
     transform: translateX(100%);
-    transition: transform 0.2s ease-in;
     z-index: 3;
     justify-content: space-evenly;
     &router-link {
       opacity: 0;
       transition: transform 3s ease-in;
     }
+  }
+
+  .transform {
+    transition: transform 0.2s ease-in;
   }
 
   .burger {
