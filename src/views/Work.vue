@@ -14,7 +14,13 @@
       </div>
       <div class="work-page__main-music">
         <!-- PLAYER -->
-        <div class="player">
+        <div
+          class="player"
+          :style="{
+            'background-image':
+              'url(' + require('../assets/img/na_zare.svg') + ')',
+          }"
+        >
           <div class="player__main">
             <audio
               v-on:ended="ended"
@@ -108,6 +114,7 @@ export default {
       playButton: true,
     };
   },
+  computed: {},
   methods: {
     playSong() {
       this.playButton = !this.playButton;
@@ -142,15 +149,17 @@ export default {
       const roundAnimation2 = document.querySelector(
         ".work-page__main-animation-block2"
       );
-      roundAnimation2.style.minHeight = array[450] / 3 + "rem";
-      roundAnimation2.style.width = array[450] / 3 + "rem";
+      roundAnimation2.style.minHeight = array[300] / 3 + "rem";
+      roundAnimation2.style.width = array[300] / 3 + "rem";
       roundAnimation.style.minHeight = array[100] / 3 + "rem";
       roundAnimation.style.width = array[100] / 3 + "rem";
     },
     loadSong(song) {
       this.$refs.audio.src = require(`../assets/tracks/${song}.mp3`);
-      const player = document.querySelector(".player");
-      player.style.backgroundImage = `url(../assets/img/${song}.svg)`;
+      // const player = document.querySelector(".player");
+      // player.style.backgroundImage = `url(../assets/img/${song}.svg)`;
+      // console.log(song);
+      // this.playerImg(song);
     },
     loadFeedback(el) {
       const feedbackText = document.querySelector(".feedback__text");
@@ -246,7 +255,7 @@ $greenblue: #00adb5;
   font-size: 2rem;
   width: 27rem;
   height: 35rem;
-  background-image: url(../assets/img/na_zare.svg);
+  // background-image: url(../assets/img/na_zare.svg);
   background-size: cover;
   border-radius: 2rem;
   border: solid 0.3rem white;

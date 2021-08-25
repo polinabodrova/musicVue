@@ -104,6 +104,11 @@ export default {
       toggleNav: false,
     };
   },
+  watch: {
+    $route() {
+      this.toggleNav = !this.toggleNav;
+    },
+  },
   methods: {},
 
   mounted() {
@@ -131,6 +136,9 @@ export default {
 </script>
 <style lang="scss">
 //BASIC
+displayMenu {
+  display: none;
+}
 $main: #393e46;
 $greenblue: #00adb5;
 *,
