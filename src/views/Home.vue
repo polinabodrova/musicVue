@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="home-page__main-container">
-      <div class="home-page__main-container-img"></div>
+      <div class="home-page__main-container-img">
+        <img src="../assets/img/sasha.png" alt="" />
+      </div>
       <div class="home-page__main-container-text">
         <h2 class="home-page__main-container-text-h">Official site</h2>
         <img src="../assets/img/alex-logo.svg" width="550" alt="" />
@@ -33,14 +35,14 @@ $greenblue: #00adb5;
 .home-page__main-container {
   // background-image: url(./img/frantisek-unsplash.jpg);
   // background-size: cover;
-  min-height: 102vh;
-  margin-top: -6rem;
-  display: grid;
-  grid-template-columns: 1fr 1rem 1fr;
-  justify-items: start;
-  align-items: end;
-  // &-img {
-  // }
+  // min-height: 102vh;
+  // margin-top: -6rem;
+  display: flex;
+  flex-direction: row;
+  &-img {
+    width: 80%;
+    opacity: 0;
+  }
   &-text {
     align-self: center;
     font-size: 1.5rem;

@@ -10,6 +10,7 @@
           height="500rem"
         />
         <div class="work-page__main-animation-block"></div>
+        <div class="work-page__main-animation-block2"></div>
       </div>
       <div class="work-page__main-music">
         <!-- PLAYER -->
@@ -138,8 +139,13 @@ export default {
       const roundAnimation = document.querySelector(
         ".work-page__main-animation-block"
       );
-      roundAnimation.style.minHeight = array[200] / 3 + "rem";
-      roundAnimation.style.width = array[200] / 3 + "rem";
+      const roundAnimation2 = document.querySelector(
+        ".work-page__main-animation-block2"
+      );
+      roundAnimation2.style.minHeight = array[450] / 3 + "rem";
+      roundAnimation2.style.width = array[450] / 3 + "rem";
+      roundAnimation.style.minHeight = array[100] / 3 + "rem";
+      roundAnimation.style.width = array[100] / 3 + "rem";
     },
     loadSong(song) {
       this.$refs.audio.src = require(`../assets/tracks/${song}.mp3`);
@@ -205,6 +211,7 @@ $greenblue: #00adb5;
     position: relative;
     z-index: 1;
     align-self: flex-end;
+    opacity: 0;
   }
   &-animation-block {
     width: 45rem;
@@ -214,11 +221,18 @@ $greenblue: #00adb5;
     opacity: 2;
     position: absolute;
     filter: blur(2rem);
-    // box-shadow: 120px 80px 40px 0 #0ff;
-    // filter: drop-shadow(-10px -10px 50px $greenblue)
-    //   drop-shadow(10px 10px 200px $greenblue);
     box-shadow: 0 0 15rem lighten($greenblue, 40%),
       0 0 15rem lighten($greenblue, 40%);
+  }
+  &-animation-block2 {
+    width: 30rem;
+    min-height: 30rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 2;
+    position: absolute;
+    filter: blur(2rem);
+    box-shadow: 0 0 15rem lighten(white, 40%), 0 0 15rem lighten(white, 40%);
   }
   &-music {
     margin-top: 6rem;
