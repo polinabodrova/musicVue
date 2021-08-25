@@ -6,12 +6,12 @@ import {
   faForward,
   faBackward,
   faPlayCircle,
-  faPause,
+  faPauseCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Logo from "./components/Logo.vue";
 
-library.add(faForward, faBackward, faPlayCircle, faPause);
+library.add(faForward, faBackward, faPlayCircle, faPauseCircle);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.component("logo-section", Logo);

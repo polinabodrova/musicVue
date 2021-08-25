@@ -14,13 +14,8 @@
       </div>
       <div class="work-page__main-music">
         <!-- PLAYER -->
-        <div
-          class="player"
-          :style="{
-            'background-image':
-              'url(' + require('../assets/img/na_zare.svg') + ')',
-          }"
-        >
+        <div class="player">
+          <img class="player-img" :src="require('../assets/img/' + src())" />
           <div class="player__main">
             <audio
               v-on:ended="ended"
@@ -46,7 +41,7 @@
                 <font-awesome-icon
                   v-on:click="pauseSong"
                   v-bind:class="{ notactive: playButton }"
-                  :icon="['fas', 'pause']"
+                  :icon="['fas', 'pause-circle']"
                 />
                 <!-- <i class="fas fa-play-circle"></i>
                 <i class="fas fa-pause notactive"></i> -->
@@ -116,6 +111,15 @@ export default {
   },
   computed: {},
   methods: {
+    src() {
+      if (this.songs[this.currentSongIndex] === "na_zare") {
+        return "na_zare.svg";
+      } else if (this.songs[this.currentSongIndex] === "melody") {
+        return "melody.svg";
+      } else if (this.songs[this.currentSongIndex] === "waiting") {
+        return "waiting.svg";
+      }
+    },
     playSong() {
       this.playButton = !this.playButton;
       if (!this.context) {
@@ -158,8 +162,6 @@ export default {
       this.$refs.audio.src = require(`../assets/tracks/${song}.mp3`);
       // const player = document.querySelector(".player");
       // player.style.backgroundImage = `url(../assets/img/${song}.svg)`;
-      // console.log(song);
-      // this.playerImg(song);
     },
     loadFeedback(el) {
       const feedbackText = document.querySelector(".feedback__text");
@@ -234,8 +236,8 @@ $greenblue: #00adb5;
       0 0 15rem lighten($greenblue, 40%);
   }
   &-animation-block2 {
-    width: 30rem;
-    min-height: 30rem;
+    width: 35rem;
+    min-height: 35rem;
     border-radius: 50%;
     background: transparent;
     opacity: 2;
@@ -255,15 +257,23 @@ $greenblue: #00adb5;
   font-size: 2rem;
   width: 27rem;
   height: 35rem;
-  // background-image: url(../assets/img/na_zare.svg);
-  background-size: cover;
-  border-radius: 2rem;
-  border: solid 0.3rem white;
-  box-shadow: 0 0 0.5rem white;
+  position: relative;
+  &-img {
+    // position: relative;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 2rem;
+    border: solid 0.2rem white;
+    box-shadow: 0 0 0.5rem white;
+  }
   &__main {
     height: 100%;
     width: 100%;
     transition: all 500ms ease-in-out;
+    position: absolute;
+    bottom: -1rem;
     &-flex {
       display: flex;
       justify-content: center;
@@ -294,10 +304,13 @@ $greenblue: #00adb5;
       cursor: pointer;
       &-playpause {
         margin: 0 1.5rem;
-        font-size: 3.9rem;
+        font-size: 4rem;
       }
     }
   }
+}
+.play-circle {
+  filter: drop-shadow(0 0 0.75rem crimson);
 }
 
 .feedback {

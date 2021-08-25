@@ -106,7 +106,7 @@ export default {
   },
   watch: {
     $route() {
-      this.toggleNav = !this.toggleNav;
+      if (window.innerWidth < 900) this.toggleNav = !this.toggleNav;
     },
   },
   methods: {},
@@ -131,6 +131,7 @@ export default {
     setTimeout(() => {
       this.initialPage = false;
     }, 3500);
+    console.log(window.innerWidth);
   },
 };
 </script>
