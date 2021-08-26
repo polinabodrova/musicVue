@@ -18,13 +18,18 @@
           <img class="player-img" :src="require('../assets/img/' + src())" />
           <div class="player__main">
             <audio
+              v-on:timeupdate="onTimeUpdateListener"
               v-on:ended="ended"
               ref="audio"
               src="../assets/tracks/na_zare.mp3"
               class="player__main-audio"
             ></audio>
             <div class="player__main-flex">
-              <div class="player__main-progress">
+              <div
+                v-on:click="setProgress"
+                ref="progressBar"
+                class="player__main-progress"
+              >
                 <div class="player__main-progress-line"></div>
               </div>
             </div>
@@ -129,8 +134,8 @@ export default {
       this.animationLoop();
     },
     pauseSong() {
-      this.playButton = !this.playButton;
       this.$refs.audio.pause();
+      this.playButton = !this.playButton;
     },
     getContext() {
       this.context = new AudioContext();
@@ -200,6 +205,18 @@ export default {
     },
     ended() {
       this.nextSong();
+    },
+    onTimeUpdateListener(e) {
+      const { duration, currentTime } = e.target;
+      const progressPercent = (currentTime * 100) / duration;
+      const line = document.querySelector(".player__main-progress-line");
+      line.style.width = `${progressPercent}%`;
+    },
+    setProgress(e) {
+      const width = this.$refs.progressBar.clientWidth;
+      const clickX = e.offsetX;
+      const duration = this.$refs.audio.duration;
+      this.$refs.audio.currentTime = (clickX / width) * duration;
     },
   },
 };

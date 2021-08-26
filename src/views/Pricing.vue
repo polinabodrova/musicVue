@@ -1,21 +1,23 @@
 <template>
-  <div class="main">
+  <section id="pricing">
     <logo-section />
-    <div class="price__container">
-      <div class="price__container-item">
-        <div class="price__container-item-head">30 $ BASIC</div>
-        <div class="price__container-item-main"></div>
-      </div>
-      <div class="price__container-item">
-        <div class="price__container-item-head">40 $ STANDARD</div>
-        <div class="price__container-item-main"></div>
-      </div>
-      <div class="price__container-item">
-        <div class="price__container-item-head">50 $ PREMIUM</div>
-        <div class="price__container-item-main"></div>
+    <div class="main">
+      <div class="price__container">
+        <div class="price__container-item">
+          <div class="price__container-item-head">30 $ BASIC</div>
+          <div class="price__container-item-main"></div>
+        </div>
+        <div class="price__container-item">
+          <div class="price__container-item-head">40 $ STANDARD</div>
+          <div class="price__container-item-main"></div>
+        </div>
+        <div class="price__container-item">
+          <div class="price__container-item-head">50 $ PREMIUM</div>
+          <div class="price__container-item-main"></div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 <script></script>
 <style scoped lang="scss">
@@ -30,10 +32,10 @@ $greenblue: #00adb5;
   top: 0rem;
 }
 .price__container {
-  margin-top: 6rem;
   display: flex;
   justify-content: center;
   position: relative;
+  margin-top: 25rem;
   flex-wrap: wrap;
   cursor: pointer;
   // z-index: 5;

@@ -24,6 +24,7 @@ $greenblue: #00adb5;
   position: relative;
   left: 5rem;
   margin-top: 3rem;
+  z-index: 2;
   &__hr {
     width: 18%;
     border: 1px solid $greenblue;
