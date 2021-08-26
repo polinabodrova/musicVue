@@ -23,8 +23,9 @@ $greenblue: #00adb5;
 .logo-text {
   position: relative;
   left: 5rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   &__hr {
+    width: 18%;
     border: 1px solid $greenblue;
     background-color: $greenblue;
   }

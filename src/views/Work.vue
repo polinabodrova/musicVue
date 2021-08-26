@@ -210,8 +210,9 @@ $greenblue: #00adb5;
 .work-page__main {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin: -4rem 5rem 0 5rem;
+  justify-content: space-around;
+  align-items: center;
+  // margin: -4rem 5rem 0 5rem;
   &-animation {
     display: flex;
     justify-content: center;
@@ -316,7 +317,8 @@ $greenblue: #00adb5;
 .feedback {
   color: white;
   width: 50rem;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
+  margin-top: 3rem;
   &__text {
     text-align: center;
     margin-top: 2rem;

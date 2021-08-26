@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <logo-section />
     <div class="price__container">
       <div class="price__container-item">
@@ -21,6 +21,14 @@
 <style scoped lang="scss">
 $main: #393e46;
 $greenblue: #00adb5;
+.main {
+  position: absolute;
+  background-image: url(../assets/video/pexels-cottonbro.gif);
+  background-size: cover;
+  min-height: 100%;
+  min-width: 100%;
+  top: 0rem;
+}
 .price__container {
   margin-top: 6rem;
   display: flex;
@@ -28,17 +36,18 @@ $greenblue: #00adb5;
   position: relative;
   flex-wrap: wrap;
   cursor: pointer;
+  // z-index: 5;
   &-item {
     position: relative;
     flex-basis: 25rem;
     height: auto;
     margin: 2rem;
     &:hover &-head {
-      color: $greenblue;
+      color: $greenblue !important;
       transform: translateY(-2rem);
     }
     &:hover &-main {
-      color: $greenblue;
+      color: $greenblue !important;
       transform: translateY(-2rem);
     }
     &-head {

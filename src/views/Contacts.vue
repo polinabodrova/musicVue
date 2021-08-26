@@ -50,7 +50,9 @@
           </div>
         </div> -->
       </div>
-      <div class="contacts-img"></div>
+      <div class="contacts-img">
+        <img src="../assets/img/sasha.png" alt="" />
+      </div>
     </div>
   </div>
 </template>
@@ -58,12 +60,13 @@
 $main: #393e46;
 $greenblue: #00adb5;
 .contacts {
-  margin: 2rem 0 auto 5rem;
+  margin-top: 2.5rem;
   display: flex;
   flex-direction: row;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 2.8rem;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
   &__form {
     color: white;
@@ -74,7 +77,7 @@ $greenblue: #00adb5;
       color: $greenblue;
     }
     & input {
-      width: 45rem;
+      width: 100%;
       height: 3.5rem;
       border: none;
       outline: none;
@@ -94,8 +97,8 @@ $greenblue: #00adb5;
       border: none;
       outline: none;
       min-height: 12rem;
-      max-height: 20rem;
-      min-width: 45rem;
+      max-height: 18rem;
+      min-width: 100%;
       max-width: 45rem;
       border-radius: 1.2rem;
       background-color: rgba(128, 128, 128, 0.2);
@@ -153,35 +156,8 @@ $greenblue: #00adb5;
   }
 }
 .contacts-img {
-  &__box {
-    position: relative;
-    background-color: hotpink;
-    width: 30rem;
-    height: 45rem;
-    margin: 2rem 4rem;
-    & ::before {
-      content: "";
-      position: absolute;
-    }
-    & img {
-    }
-    &-circle {
-      position: absolute;
-      width: 30rem;
-      height: 30rem;
-      background-color: $greenblue;
-      overflow: hidden;
-      bottom: 0;
-      left: 0;
-      border-radius: 50%;
-      & img {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        height: 40rem;
-      }
-    }
+  &img {
+    // visibility: hidden;
   }
 }
 </style>

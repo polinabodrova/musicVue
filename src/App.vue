@@ -242,17 +242,20 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 5vh;
+  padding-left: 1rem;
+  z-index: 2;
+  // min-height: 5vh;
   // background-color: rgba(128, 128, 128, 0.2);
   // font-family:
 }
 .router-link-exact-active {
-  color: #42b983 !important;
+  color: $greenblue !important;
 }
 .nav-links {
   display: flex;
   justify-content: space-around;
   width: 30%;
+  z-index: 2;
   & a {
     color: white;
     text-decoration: none;
@@ -266,6 +269,7 @@ nav {
 }
 .burger {
   display: none;
+  z-index: 2;
   & div {
     width: 2.5rem;
     height: 0.2rem;
