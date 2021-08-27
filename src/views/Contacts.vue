@@ -1,6 +1,9 @@
 <template>
   <!-- //
   https://api.telegram.org/bot1960776155:AAEbt5s2YGVHFpDOrFwgsqhp2WrfDYUW29Q/getUpdates -->
+  <!-- https://api.telegram.org/bot1960776155:AAEbt5s2YGVHFpDOrFwgsqhp2WrfDYUW29Q/sendMessage?chat_id=915692945&text=hi -->
+
+  <!-- "id":915692945 -->
 
   <div>
     <logo-section />
@@ -12,11 +15,7 @@
           contact me directly through social media or fill out the form <br />
           and I'll get back to you soon
         </p>
-        <form
-          method="POST"
-          action="send"
-          enctype="application/x-www-form-urlencoded"
-        >
+        <form v-on:submit.prevent>
           <div class="contacts__form-field">
             <label for="name">Your name:</label><br />
             <input type="text" id="name" name="name" />
@@ -24,7 +23,7 @@
           </div>
           <div class="contacts__form-field">
             <label for="mail">Your e-mail:</label><br />
-            <input type="email" id="mail" name="email" />
+            <input id="mail" name="email" />
             <i class="fa fa-envelope"></i><br />
           </div>
           <div class="contacts__form-field">
@@ -38,8 +37,21 @@
           </div>
 
           <div class="contacts__form-button">
-            <button type="submit" value="submit">Send message</button>
-            <span>Sending your message...</span>
+            <button
+              v-on:click="
+                submitForm();
+                mailStatus = true;
+              "
+              type="submit"
+              value="submit"
+            >
+              Send message
+            </button>
+            <span
+              class="contacts__form-button-status"
+              v-bind:class="{ display: mailStatus }"
+              >Your message has been sent</span
+            >
           </div>
         </form>
         <!-- <div class="contacts__social">
@@ -56,6 +68,56 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  name: "Contacts",
+  components: {
+    // HelloWorld,
+  },
+  data() {
+    return {
+      mailStatus: false,
+    };
+  },
+  methods: {
+    submitForm() {
+      const message = document.getElementById("msg").value;
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("mail").value;
+      const mailStatus = document.querySelector(
+        ".contacts__form-button-status"
+      );
+      const form = document.querySelector("form");
+      if (!name) {
+        mailStatus.innerHTML = "Enter your name";
+        mailStatus.style.color = "red";
+      } else if (!email) {
+        mailStatus.innerHTML = "Enter your e-mail address";
+        mailStatus.style.color = "red";
+      } else if (!message) {
+        mailStatus.innerHTML = "Enter your message";
+        mailStatus.style.color = "red";
+      } else if (!email.match(/\S+@\S+\.\S+/)) {
+        mailStatus.innerHTML = "Enter a valid e-mail address";
+        mailStatus.style.color = "red";
+      } else {
+        const newMessage = `Name:${name} E-mail:${email} Message:${message}`;
+        const token = `1960776155:AAEbt5s2YGVHFpDOrFwgsqhp2WrfDYUW29Q`;
+        let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=915692945&text=`;
+        let xhttp = new XMLHttpRequest();
+        xhttp.open("GET", url + newMessage, true);
+        xhttp.send();
+        console.log(form);
+        form.reset();
+        setTimeout(() => {
+          mailStatus.style.display = "none";
+        }, 3000);
+      }
+    },
+  },
+};
+</script>
+
 <style scoped lang="scss">
 $main: #393e46;
 $greenblue: #00adb5;
@@ -84,7 +146,7 @@ $greenblue: #00adb5;
       border-radius: 1.2rem;
       background-color: rgba(128, 128, 128, 0.2);
       margin: 0.6rem 0;
-      text-indent: 3.5rem;
+      text-indent: 2rem;
       color: white;
       &:focus {
         border: 0.2rem solid $greenblue;
@@ -103,12 +165,12 @@ $greenblue: #00adb5;
       border-radius: 1.2rem;
       background-color: rgba(128, 128, 128, 0.2);
       vertical-align: super;
-      text-indent: 3rem;
+      text-indent: 2rem;
       line-height: 2.5rem;
       font-size: 1.7rem;
       margin: 0.6rem 0;
       color: white;
-      padding-left: 1rem;
+      padding-top: 0.5rem;
       &:focus {
         border: 0.2rem solid $greenblue;
         & ~ i {
@@ -124,7 +186,7 @@ $greenblue: #00adb5;
       background-color: $greenblue;
       border: none;
       cursor: pointer;
-      margin-right: 3rem;
+      // margin-right: 1rem;
     }
   }
   &__social {
@@ -154,6 +216,14 @@ $greenblue: #00adb5;
     //   color: $greenblue;
     // }
   }
+}
+.contacts__form-button-status {
+  display: inline-block;
+  padding-left: 2rem;
+  visibility: hidden;
+}
+.display {
+  visibility: visible;
 }
 .contacts-img {
   &img {

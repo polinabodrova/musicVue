@@ -165,8 +165,6 @@ export default {
     },
     loadSong(song) {
       this.$refs.audio.src = require(`../assets/tracks/${song}.mp3`);
-      // const player = document.querySelector(".player");
-      // player.style.backgroundImage = `url(../assets/img/${song}.svg)`;
     },
     loadFeedback(el) {
       const feedbackText = document.querySelector(".feedback__text");
@@ -185,10 +183,12 @@ export default {
       if (this.currentFeedbackIndex < 0) {
         this.currentFeedbackIndex = this.feedbacks.length - 1;
       }
-      console.log(this.songs[this.currentSongIndex]);
       this.loadSong(this.songs[this.currentSongIndex]);
       this.loadFeedback(this.feedbacks[this.currentFeedbackIndex]);
-      this.playSong();
+      if (!this.$refs.audio.play()) {
+        this.playSong();
+      }
+      this.playButton = false;
     },
     nextSong() {
       this.currentSongIndex++;
@@ -201,7 +201,10 @@ export default {
       }
       this.loadSong(this.songs[this.currentSongIndex]);
       this.loadFeedback(this.feedbacks[this.currentFeedbackIndex]);
-      this.playSong();
+      if (!this.$refs.audio.play()) {
+        this.playSong();
+      }
+      this.playButton = false;
     },
     ended() {
       this.nextSong();
@@ -224,23 +227,62 @@ export default {
 <style scoped lang="scss">
 $main: #393e46;
 $greenblue: #00adb5;
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    } // 600px
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    } // 900px
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    } //1800
+  }
+}
 .work-page__main {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  @include respond(tab-land) {
+    margin-top: 10rem;
+  }
+  @include respond(tab-port) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
   // margin: -4rem 5rem 0 5rem;
   &-animation {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 7rem;
+    @include respond(tab-port) {
+      position: absolute;
+      margin-left: 0;
+      top: 22rem;
+    }
   }
   &-animation-img {
     position: relative;
     z-index: 1;
     align-self: flex-end;
-    opacity: 0;
+    opacity: 1;
+    @include respond(tab-port) {
+      display: none;
+    }
   }
   &-animation-block {
     width: 45rem;
@@ -273,9 +315,12 @@ $greenblue: #00adb5;
 .player {
   color: $greenblue;
   font-size: 2rem;
-  width: 27rem;
+  width: 55%;
   height: 35rem;
   position: relative;
+  @include respond(tab-port) {
+    top: -3rem;
+  }
   &-img {
     // position: relative;
     object-fit: cover;
@@ -336,18 +381,26 @@ $greenblue: #00adb5;
   width: 50rem;
   font-size: 1.7rem;
   margin-top: 3rem;
+  @include respond(tab-port) {
+    margin-top: 3rem;
+  }
   &__text {
     text-align: center;
     margin-top: 2rem;
+    @include respond(tab-port) {
+      // width: 80%;
+      padding: 2.5rem;
+    }
   }
   &__nameimg {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
     &-img {
       margin-right: 2rem;
+      height: 10%;
     }
   }
 }

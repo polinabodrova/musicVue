@@ -149,17 +149,40 @@ $greenblue: #00adb5;
   padding: 0;
   box-sizing: inherit;
 }
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    } // 600px
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    } // 900px
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    } //1800
+  }
+}
 html {
+  //1200-1800 our normal size
   font-size: 62.5%; //1 rem = 10px; 10/16*100
-  // @include respond(tab-land) {
-  //   font-size: 56.25%; //1 rem = 9px
-  // }
-  // @include respond(tab-port) {
-  //   font-size: 50%; //1 rem = 8px
-  // }
-  // @include respond(big-desktop) {
-  //   font-size: 75%; //1 rem = 8px
-  // }
+  @include respond(tab-land) {
+    font-size: 56.25%; //1 rem = 9px (900-1200px) <1200
+  }
+  @include respond(tab-port) {
+    font-size: 50%; //1 rem = 8px (600-900px) <900
+  }
+  @include respond(big-desktop) {
+    font-size: 75%; //1 rem = 8px (1800px) <1800
+  }
 }
 body {
   box-sizing: border-box;
@@ -170,6 +193,7 @@ body {
   background-image: url(./assets/img/joshua-sukoff.jpg);
   background-size: cover;
   min-height: 100vh;
+  min-width: 100vw;
   // padding: 1rem;
 }
 
