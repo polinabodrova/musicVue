@@ -185,9 +185,7 @@ export default {
       }
       this.loadSong(this.songs[this.currentSongIndex]);
       this.loadFeedback(this.feedbacks[this.currentFeedbackIndex]);
-      if (!this.$refs.audio.play()) {
-        this.playSong();
-      }
+      this.playSong();
       this.playButton = false;
     },
     nextSong() {
@@ -201,9 +199,7 @@ export default {
       }
       this.loadSong(this.songs[this.currentSongIndex]);
       this.loadFeedback(this.feedbacks[this.currentFeedbackIndex]);
-      if (!this.$refs.audio.play()) {
-        this.playSong();
-      }
+      this.playSong();
       this.playButton = false;
     },
     ended() {
@@ -258,10 +254,6 @@ $greenblue: #00adb5;
     margin-top: 10rem;
   }
   @include respond(tab-port) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
   }
   // margin: -4rem 5rem 0 5rem;
   &-animation {
@@ -272,7 +264,9 @@ $greenblue: #00adb5;
     @include respond(tab-port) {
       position: absolute;
       margin-left: 0;
-      top: 22rem;
+      left: 50%;
+      top: 47%;
+      transform: translate(-50%, -50%);
     }
   }
   &-animation-img {
@@ -310,6 +304,13 @@ $greenblue: #00adb5;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include respond(tab-port) {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
   }
 }
 .player {
@@ -317,9 +318,10 @@ $greenblue: #00adb5;
   font-size: 2rem;
   width: 55%;
   height: 35rem;
+  // height: 79%;
   position: relative;
   @include respond(tab-port) {
-    top: -3rem;
+    margin-bottom: -3rem;
   }
   &-img {
     // position: relative;
@@ -382,14 +384,15 @@ $greenblue: #00adb5;
   font-size: 1.7rem;
   margin-top: 3rem;
   @include respond(tab-port) {
-    margin-top: 3rem;
+    margin-top: 5rem;
+    width: 90%;
   }
   &__text {
     text-align: center;
     margin-top: 2rem;
     @include respond(tab-port) {
-      // width: 80%;
-      padding: 2.5rem;
+      // min-width: 60%;
+      // padding: 2.5rem;
     }
   }
   &__nameimg {

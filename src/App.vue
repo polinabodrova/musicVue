@@ -194,7 +194,6 @@ body {
   background-size: cover;
   min-height: 100vh;
   min-width: 100vw;
-  // padding: 1rem;
 }
 
 //INITIAL SPLASH PAGE
@@ -266,11 +265,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 1rem;
+  padding: 1rem;
   z-index: 2;
   // min-height: 5vh;
-  // background-color: rgba(128, 128, 128, 0.2);
-  // font-family:
+  // margin: 0.5rem;
 }
 .router-link-exact-active {
   color: $greenblue !important;
@@ -296,7 +294,7 @@ nav {
   z-index: 2;
   & div {
     width: 2.5rem;
-    height: 0.2rem;
+    height: 0.3rem;
     background-color: #fff;
     margin: 0.5rem;
     transition: all 0.3s ease;
@@ -341,7 +339,7 @@ nav {
       background-color: transparent !important;
     }
     &-line3 {
-      transform: rotate(45deg) translate(-0.5rem, -0.5rem);
+      transform: rotate(45deg) translate(-0.6rem, -0.7rem);
     }
   }
 }

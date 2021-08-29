@@ -45,6 +45,11 @@ $greenblue: #00adb5;
       @content;
     } // 900px
   }
+  // @if $breakpoint == tab-apple {
+  //   @media (max-width: 1024px) {
+  //     @content;
+  //   } //NEW
+  // }
   @if $breakpoint == tab-land {
     @media (max-width: 75em) {
       @content;

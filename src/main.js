@@ -10,12 +10,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Logo from "./components/Logo.vue";
+import Vuelidate from "vuelidate";
 
 library.add(faForward, faBackward, faPlayCircle, faPauseCircle);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.component("logo-section", Logo);
-
+Vue.use(Vuelidate);
 Vue.config.productionTip = false;
 
 new Vue({

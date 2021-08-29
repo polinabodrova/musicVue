@@ -23,6 +23,33 @@
 <style scoped lang="scss">
 $main: #393e46;
 $greenblue: #00adb5;
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    } // 600px
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    } // 900px
+  }
+  // @if $breakpoint == tab-apple {
+  //   @media (max-width: 1024px) {
+  //     @content;
+  //   } //NEW
+  // }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    } //1800
+  }
+}
 .main {
   position: absolute;
   background-image: url(../assets/video/pexels-cottonbro.gif);
@@ -38,6 +65,10 @@ $greenblue: #00adb5;
   margin-top: 25rem;
   flex-wrap: wrap;
   cursor: pointer;
+  @include respond(tab-port) {
+    margin-top: 15rem;
+    // height: 60rem;
+  }
   // z-index: 5;
   &-item {
     position: relative;
@@ -64,6 +95,9 @@ $greenblue: #00adb5;
       line-height: 7.5rem;
       font-size: 1.7rem;
       transition: 0.3s ease-in-out;
+      @include respond(tab-port) {
+        color: $greenblue;
+      }
     }
     &-main {
       height: 30rem;
@@ -71,6 +105,9 @@ $greenblue: #00adb5;
       position: relative;
       border-radius: 1.5rem;
       transition: 0.3s ease-in-out;
+      @include respond(tab-port) {
+        color: $greenblue;
+      }
     }
   }
 }
