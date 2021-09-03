@@ -7,7 +7,12 @@
       <div class="home-page__main-container-text">
         <h2 class="home-page__main-container-text-h">Official site</h2>
         <div class="container">
-          <img src="../assets/img/alex-logo.svg" width="450" alt="" />
+          <img
+            v-bind:class="{ fouc: afterLoading }"
+            src="../assets/img/alex-logo.svg"
+            width="450"
+            alt=""
+          />
         </div>
         <p class="home-page__main-container-text-p">
           “Music expresses feeling and thought, without language; it was below
@@ -24,10 +29,37 @@
 // import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
+  data() {
+    return {
+      afterLoading: false,
+    };
+  },
+  // mounted() {
+  //   window.onload = function () {
+  //     const mainSection = document.getElementById("home");
+  //     console.log(mainSection);
+  //     mainSection.style.display = "block";
+  //   };
+  // },
   name: "Home",
   components: {
     // HelloWorld,
   },
+
+  methods: {},
+  // mounted() {
+  //   window.addEventListener("load", function () {
+  //     console.log("LOADED");
+  //     this.afterLoading = true;
+  //   });
+  // },
+  // created: function () {
+  //   window.addEventListener("load", function () {
+  //     const mainSection = document.getElementById("home");
+  //     console.log(mainSection);
+  //     mainSection.style.display = "block";
+  //   });
+  // },
 };
 </script>
 
@@ -60,6 +92,9 @@ $greenblue: #00adb5;
       @content;
     } //1800
   }
+}
+.fouc {
+  display: none;
 }
 #home {
   @include respond(tab-port) {

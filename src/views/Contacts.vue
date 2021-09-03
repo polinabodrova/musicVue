@@ -136,10 +136,9 @@ export default {
       } else {
         const newMessage = `Name:${name} E-mail:${email} Message:${message}`;
         const token = `1960776155:AAEbt5s2YGVHFpDOrFwgsqhp2WrfDYUW29Q`;
-        let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=915692945&text=`;
-        let xhttp = new XMLHttpRequest();
-        xhttp.open("GET", url + newMessage, true);
-        xhttp.send();
+        fetch(
+          `https://api.telegram.org/bot${token}/sendMessage?chat_id=915692945&text=${newMessage}`
+        );
         form.reset();
         mailStatus.style.display = "inline-block";
         setTimeout(() => {

@@ -1,94 +1,97 @@
 <template>
   <div id="app">
-    <nav>
-      <div class="logo">
-        <img
-          v-if="$route.path === '/'"
-          class="nav__container-logo-img"
-          src="./assets/img/alex-logo.svg"
-          width="130"
-          alt=""
-        />
-      </div>
-      <ul
-        class="nav-links"
-        v-bind:class="{ ['nav-active']: toggleNav, transform: toggleNav }"
-      >
-        <router-link
-          v-bind:class="{
-            ['animate__animated animate__fadeInRight delay1']: toggleNav,
-          }"
-          to="/"
-          >Home</router-link
-        >
-        <router-link
-          v-bind:class="{
-            ['animate__animated animate__fadeInRight delay2']: toggleNav,
-          }"
-          to="/work"
-          >Work</router-link
-        >
-        <router-link
-          v-bind:class="{
-            ['animate__animated animate__fadeInRight delay3']: toggleNav,
-          }"
-          to="/pricing"
-          >Pricing</router-link
-        >
-        <router-link
-          v-bind:class="{
-            ['animate__animated animate__fadeInRight delay4']: toggleNav,
-          }"
-          to="/contacts"
-          >Contacts</router-link
-        >
-      </ul>
-      <div class="burger" v-on:click="toggleNav = !toggleNav">
-        <div
-          v-bind:class="{
-            ['burger-line1']: toggleNav,
-          }"
-        ></div>
-        <div
-          v-bind:class="{
-            ['burger-line2']: toggleNav,
-          }"
-        ></div>
-        <div
-          v-bind:class="{
-            ['burger-line3']: toggleNav,
-          }"
-        ></div>
-      </div>
-    </nav>
-    <transition name="fade">
-      <section
-        id="initial-page"
-        v-bind:class="{ out: initialPageOut }"
-        v-if="initialPage"
-      >
-        <div class="initial-page__logo">
-          <span
-            class="initial-page__logo-name logo-name"
-            v-bind:class="{
-              ['logo-active']: enterName,
-              ['logo-bottom']: exitName,
-            }"
-            >alex</span
-          >
-          <span
-            class="initial-page__logo-name logo-surname"
-            v-bind:class="{
-              ['logo-active']: enterSurname,
-              ['logo-bottom']: exitSurname,
-            }"
-            >Naumov</span
-          >
+    <div>
+      <nav>
+        <div class="logo">
+          <img
+            v-if="$route.path === '/'"
+            class="nav__container-logo-img"
+            src="./assets/img/alex-logo.svg"
+            width="130"
+            alt=""
+          />
         </div>
-      </section>
-    </transition>
+        <ul
+          class="nav-links"
+          v-bind:class="{ ['nav-active']: toggleNav, transform: toggleNav }"
+        >
+          <router-link
+            v-bind:class="{
+              ['animate__animated animate__fadeInRight delay1']: toggleNav,
+            }"
+            to="/"
+            >Home</router-link
+          >
+          <router-link
+            v-bind:class="{
+              ['animate__animated animate__fadeInRight delay2']: toggleNav,
+            }"
+            to="/work"
+            >Work</router-link
+          >
+          <router-link
+            v-bind:class="{
+              ['animate__animated animate__fadeInRight delay3']: toggleNav,
+            }"
+            to="/pricing"
+            >Pricing</router-link
+          >
+          <router-link
+            v-bind:class="{
+              ['animate__animated animate__fadeInRight delay4']: toggleNav,
+            }"
+            to="/contacts"
+            >Contacts</router-link
+          >
+        </ul>
+        <div class="burger" v-on:click="toggleNav = !toggleNav">
+          <div
+            v-bind:class="{
+              ['burger-line1']: toggleNav,
+            }"
+          ></div>
+          <div
+            v-bind:class="{
+              ['burger-line2']: toggleNav,
+            }"
+          ></div>
+          <div
+            v-bind:class="{
+              ['burger-line3']: toggleNav,
+            }"
+          ></div>
+        </div>
+      </nav>
+      <transition name="fade">
+        <section
+          id="initial-page"
+          v-bind:class="{ out: initialPageOut }"
+          v-if="initialPage"
+        >
+          <div class="initial-page__logo">
+            <span
+              class="
+                initial-page__logo-name
+                logo-name
+                animate__animated animate__fadeInUp
+              "
+              >alex</span
+            >
+            <span
+              class="
+                initial-page__logo-name
+                logo-surname
+                animate__animated animate__fadeInUp
+                delay4
+              "
+              >Naumov</span
+            >
+          </div>
+        </section>
+      </transition>
 
-    <router-view />
+      <router-view />
+    </div>
   </div>
 </template>
 <script>
@@ -106,32 +109,52 @@ export default {
   },
   watch: {
     $route() {
-      if (window.innerWidth < 900) this.toggleNav = !this.toggleNav;
+      if (window.innerWidth < 970) this.toggleNav = !this.toggleNav;
     },
   },
   methods: {},
+  // beforeCreate() {
+  //   window.addEventListener("load", function () {
+  //     console.log("blalala");
+  //     this.loaded = true;
+  //   });
+  // },
+  // beforeCreate() {
+  //   window.addEventListener("DOMContentLoaded", function () {
+  //     setTimeout(() => {
+  //       this.initialPage = false;
+  //     }, 1000);
+  //   });
+  // },
 
   mounted() {
+    // window.addEventListener("load", function () {
+    //   this.loaded = true;
+    // });
+    // window.addEventListener("load", function () {
+    //   console.log("LOAD");
+    // }),
+    //   window.addEventListener("DOMContentLoaded", function () {
+    //     // this.isloading = true;
+    //     console.log("DOMCONTENT");
+    //   }),
+    // setTimeout(() => {
+    //   this.initialPage = false;
+    // }, 3000);
+    // this.$router.push("/");
+    // setTimeout(() => {
+    //   this.enterName = true;
+    // }, 500);
+    // setTimeout(() => {
+    //   this.enterSurname = true;
+    // }, 1000);
+    // setTimeout(() => {
+    //   // this.exitName = true;
+    //   // this.exitSurname = true;
+    // }, 2700);
     setTimeout(() => {
       this.initialPage = false;
     }, 3000);
-
-    // this.$router.push("/");
-
-    setTimeout(() => {
-      this.enterName = true;
-    }, 500);
-    setTimeout(() => {
-      this.enterSurname = true;
-    }, 1000);
-    setTimeout(() => {
-      this.exitName = true;
-      this.exitSurname = true;
-    }, 2700);
-    setTimeout(() => {
-      this.initialPage = false;
-    }, 3500);
-    console.log(window.innerWidth);
   },
 };
 </script>
@@ -204,7 +227,10 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-image: url(./assets/initial-page-background/1.jpg);
+  background-color: #07090f;
+  // background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+  // background-image: url(./assets/img/curve.svg);
+  background-image: url(./assets/initial-page-background/5-opt.jpg);
   background-size: cover;
   transition: 1.2s;
   font-size: 11rem;
@@ -224,28 +250,28 @@ body {
   &-name {
     position: relative;
     display: inline-block;
-    bottom: -10rem;
-    opacity: 0;
+    // bottom: 0rem;
+    opacity: 1;
   }
 }
-.logo-active {
-  bottom: 0;
-  opacity: 1;
-  transition: ease-in-out 0.5s;
-}
-
-.logo-bottom {
-  bottom: 15rem;
-  opacity: 0;
-  transition: ease-in-out 0.5s;
-  filter: blur(2rem);
-}
+// .logo-active {
+//   bottom: 0;
+//   opacity: 1;
+//   transition: ease-in-out 0.5s;
+// }
 .logo-name {
   z-index: 1;
   left: 1.7rem;
 }
+
+// .logo-bottom {
+//   bottom: 15rem;
+//   opacity: 0;
+//   transition: ease-in-out 0.5s;
+//   filter: blur(2rem);
+// }
 .logo-surname {
-  position: relative;
+  // position: relative;
   color: $greenblue;
   text-transform: uppercase;
 }
