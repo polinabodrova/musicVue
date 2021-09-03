@@ -34,32 +34,12 @@ export default {
       afterLoading: false,
     };
   },
-  // mounted() {
-  //   window.onload = function () {
-  //     const mainSection = document.getElementById("home");
-  //     console.log(mainSection);
-  //     mainSection.style.display = "block";
-  //   };
-  // },
   name: "Home",
   components: {
     // HelloWorld,
   },
 
   methods: {},
-  // mounted() {
-  //   window.addEventListener("load", function () {
-  //     console.log("LOADED");
-  //     this.afterLoading = true;
-  //   });
-  // },
-  // created: function () {
-  //   window.addEventListener("load", function () {
-  //     const mainSection = document.getElementById("home");
-  //     console.log(mainSection);
-  //     mainSection.style.display = "block";
-  //   });
-  // },
 };
 </script>
 

@@ -68,12 +68,18 @@
           v-bind:class="{ out: initialPageOut }"
           v-if="initialPage"
         >
+          <img
+            class="pic"
+            src="./assets/initial-page-background/5-opt.jpg"
+            alt=""
+          />
           <div class="initial-page__logo">
             <span
               class="
                 initial-page__logo-name
                 logo-name
                 animate__animated animate__fadeInUp
+                delay2
               "
               >alex</span
             >
@@ -109,35 +115,12 @@ export default {
   },
   watch: {
     $route() {
-      if (window.innerWidth < 970) this.toggleNav = !this.toggleNav;
+      if (window.innerWidth < 908) this.toggleNav = !this.toggleNav;
     },
   },
   methods: {},
-  // beforeCreate() {
-  //   window.addEventListener("load", function () {
-  //     console.log("blalala");
-  //     this.loaded = true;
-  //   });
-  // },
-  // beforeCreate() {
-  //   window.addEventListener("DOMContentLoaded", function () {
-  //     setTimeout(() => {
-  //       this.initialPage = false;
-  //     }, 1000);
-  //   });
-  // },
 
   mounted() {
-    // window.addEventListener("load", function () {
-    //   this.loaded = true;
-    // });
-    // window.addEventListener("load", function () {
-    //   console.log("LOAD");
-    // }),
-    //   window.addEventListener("DOMContentLoaded", function () {
-    //     // this.isloading = true;
-    //     console.log("DOMCONTENT");
-    //   }),
     // setTimeout(() => {
     //   this.initialPage = false;
     // }, 3000);
@@ -230,14 +213,77 @@ body {
   background-color: #07090f;
   // background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
   // background-image: url(./assets/img/curve.svg);
-  background-image: url(./assets/initial-page-background/5-opt.jpg);
+  // background-image: url(./assets/initial-page-background/5-opt.jpg);
   background-size: cover;
   transition: 1.2s;
   font-size: 11rem;
   font-weight: 100;
   letter-spacing: -1.5px;
   z-index: 5;
+  @include respond(tab-port) {
+    letter-spacing: -1px;
+    font-size: 6.5rem;
+  }
 }
+.pic {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  animation-name: fade-in;
+  animation-duration: 3.5s;
+  animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+  // animation: fade-in 0.2s forwards;
+  // opacity: 0;
+}
+
+// @-webkit-keyframes Appearance {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+// @-o-keyframes Appearance {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+// @-moz-keyframes Appearance {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// @keyframes fade-in {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+// .content {
+//   animation: fade-in .4s ease;
+// }
 
 .initial-page__logo {
   position: absolute;
