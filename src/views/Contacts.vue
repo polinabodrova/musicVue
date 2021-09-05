@@ -313,6 +313,7 @@ $greenblue: #00adb5;
 }
 
 .contacts-img {
+  visibility: hidden;
   // display: block;
   @include respond(tab-port) {
     display: none;

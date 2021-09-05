@@ -9,8 +9,9 @@
           alt=""
           height="500rem"
         />
-        <div class="work-page__main-animation-block"></div>
-        <div class="work-page__main-animation-block2"></div>
+        <div class="work-page__main-animation-block round"></div>
+        <div class="work-page__main-animation-block2 round"></div>
+        <div class="work-page__main-animation-block3 round"></div>
       </div>
       <div class="work-page__main-music">
         <!-- PLAYER -->
@@ -81,7 +82,7 @@
 <script>
 // @ is an alias to /src
 // import HelloWorld from "@/components/HelloWorld.vue";
-
+import ColorThief from "colorthief";
 export default {
   name: "Work",
   components: {
@@ -115,6 +116,18 @@ export default {
     };
   },
   computed: {},
+  mounted() {
+    const img = document.querySelector(".player-img");
+    img.addEventListener("load", function () {
+      const colorThief = new ColorThief();
+      // colorThief.getColor(img);
+      const palette = colorThief.getPalette(img);
+      const div = document.getElementsByClassName("round");
+      div.forEach(
+        (el, i) => (el.style["boxShadow"] = `0 0 15rem rgb(${palette[i]})`)
+      );
+    });
+  },
   methods: {
     src() {
       if (this.songs[this.currentSongIndex] === "na_zare") {
@@ -152,16 +165,13 @@ export default {
       }
       let array = new Uint8Array(this.analyzer.frequencyBinCount);
       this.analyzer.getByteFrequencyData(array);
-      const roundAnimation = document.querySelector(
-        ".work-page__main-animation-block"
-      );
-      const roundAnimation2 = document.querySelector(
-        ".work-page__main-animation-block2"
-      );
-      roundAnimation2.style.minHeight = array[300] / 3 + "rem";
-      roundAnimation2.style.width = array[300] / 3 + "rem";
-      roundAnimation.style.minHeight = array[100] / 3 + "rem";
-      roundAnimation.style.width = array[100] / 3 + "rem";
+      //Animation of rounds
+      let arrayNum = [60, 120, 180];
+      const div = document.getElementsByClassName("round");
+      div.forEach((el, i) => {
+        el.style.minHeight = array[arrayNum[i]] / 3 + "rem";
+        el.style.width = array[arrayNum[i]] / 3 + "rem";
+      });
     },
     loadSong(song) {
       this.$refs.audio.src = require(`../assets/tracks/${song}.mp3`);
@@ -270,6 +280,7 @@ $greenblue: #00adb5;
     }
   }
   &-animation-img {
+    visibility: hidden;
     position: relative;
     z-index: 1;
     align-self: flex-end;
@@ -286,8 +297,8 @@ $greenblue: #00adb5;
     opacity: 2;
     position: absolute;
     filter: blur(2rem);
-    box-shadow: 0 0 15rem lighten($greenblue, 40%),
-      0 0 15rem lighten($greenblue, 40%);
+    // box-shadow: 0 0 15rem lighten($greenblue, 40%),
+    //   0 0 15rem lighten($greenblue, 40%);
   }
   &-animation-block2 {
     width: 35rem;
@@ -297,7 +308,17 @@ $greenblue: #00adb5;
     opacity: 2;
     position: absolute;
     filter: blur(2rem);
-    box-shadow: 0 0 15rem lighten(white, 40%), 0 0 15rem lighten(white, 40%);
+    // box-shadow: 0 0 15rem lighten(white, 40%), 0 0 15rem lighten(white, 40%);
+  }
+  &-animation-block3 {
+    width: 25rem;
+    min-height: 25rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 2;
+    position: absolute;
+    filter: blur(2rem);
+    // box-shadow: 0 0 15rem lighten(blue, 40%), 0 0 15rem lighten(blue, 40%);
   }
   &-music {
     margin-top: 6rem;
@@ -316,7 +337,8 @@ $greenblue: #00adb5;
 .player {
   color: $greenblue;
   font-size: 2rem;
-  width: 55%;
+  max-width: 55%;
+  // width: 35rem;
   height: 35rem;
   // height: 79%;
   position: relative;
