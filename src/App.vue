@@ -196,7 +196,7 @@ body {
   line-height: 1.7;
   font-family: "Lato", sans-serif;
   overflow-x: hidden;
-  background-image: url(./assets/img/joshua-sukoff.jpg);
+  background-image: url(./assets/img/peter-unsplash.jpg);
   background-size: cover;
   min-height: 100vh;
   min-width: 100vw;

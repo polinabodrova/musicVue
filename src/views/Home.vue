@@ -1,24 +1,22 @@
 <template>
   <section id="home">
     <div class="home-page__main-container">
-      <div class="home-page__main-container-img">
-        <img src="../assets/img/sasha.png" alt="" />
-      </div>
       <div class="home-page__main-container-text">
-        <h2 class="home-page__main-container-text-h">Official site</h2>
-        <div class="container">
-          <img
-            v-bind:class="{ fouc: afterLoading }"
-            src="../assets/img/alex-logo.svg"
-            width="450"
-            alt=""
-          />
-        </div>
+        <h2 class="home-page__main-container-text-h">About</h2>
+        <img
+          v-bind:class="{ fouc: afterLoading }"
+          src="../assets/img/alex-logo.svg"
+          width="450"
+          alt=""
+        />
         <p class="home-page__main-container-text-p">
-          “Music expresses feeling and thought, without language; it was below
-          and before speech, and it is above and beyond all words.” – Robert G.
-          Ingersoll
+          Alex is a freelance music producer and beatmaker. His experience and
+          inspiration is what makes his beats unique and colorful. The beats he
+          creates are thoughtfully handcrafted and tailored for you.
         </p>
+      </div>
+      <div class="home-page__main-container-img">
+        <img src="../assets/img/IMG_2086.png" alt="" />
       </div>
     </div>
   </section>
@@ -77,17 +75,19 @@ $greenblue: #00adb5;
   display: none;
 }
 #home {
+  height: 93vh;
   @include respond(tab-port) {
     position: relative;
   }
 }
 .home-page__main-container {
-  // background-image: url(./img/frantisek-unsplash.jpg);
-  // background-size: cover;
-  // min-height: 102vh;
-  // margin-top: -6rem;
+  width: 54%;
   display: flex;
-  flex-direction: row;
+  height: 99%;
+  align-items: center;
+  background-color: rgba(250, 249, 254, 0.1);
+  margin-left: 1rem;
+
   @include respond(tab-port) {
     position: absolute;
     left: 50%;
@@ -97,8 +97,15 @@ $greenblue: #00adb5;
     width: 60%;
   }
   &-img {
-    width: 80%;
-    opacity: 0;
+    width: 45%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    img {
+      width: 100%;
+      height: 100%;
+    }
     @include respond(tab-land) {
       width: 30%;
       height: 20%;
@@ -108,9 +115,12 @@ $greenblue: #00adb5;
     }
   }
   &-text {
-    align-self: center;
-    font-size: 1.5rem;
+    // font-size: 1.7rem;
+    font-family: "Source Sans Pro", sans-serif;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     @include respond(tab-port) {
       width: 90%;
       margin: 0 auto;
@@ -125,7 +135,7 @@ $greenblue: #00adb5;
       }
     }
     &-h {
-      font-size: 4.3rem;
+      font-size: 4rem;
       text-transform: uppercase;
       font-weight: 500;
       @include respond(tab-port) {
@@ -135,8 +145,9 @@ $greenblue: #00adb5;
       }
     }
     &-p {
-      font-size: 1.8rem;
-      // padding-top: 1rem;
+      padding-top: 2.5rem;
+      font-size: 2rem;
+      width: 50%;
       @include respond(tab-port) {
         text-align: center;
         margin-top: 2rem;

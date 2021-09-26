@@ -3,18 +3,9 @@
     <logo-section />
     <div class="work-page__main">
       <div class="work-page__main-animation">
-        <img
-          class="work-page__main-animation-img"
-          src="../assets/img/sasha.png"
-          alt=""
-          height="500rem"
-        />
-        <div class="work-page__main-animation-block round"></div>
+        <div class="work-page__main-animation-block1 round"></div>
         <div class="work-page__main-animation-block2 round"></div>
         <div class="work-page__main-animation-block3 round"></div>
-      </div>
-      <div class="work-page__main-music">
-        <!-- PLAYER -->
         <div class="player">
           <img class="player-img" :src="require('../assets/img/' + src())" />
           <div class="player__main">
@@ -49,14 +40,29 @@
                   v-bind:class="{ notactive: playButton }"
                   :icon="['fas', 'pause-circle']"
                 />
-                <!-- <i class="fas fa-play-circle"></i>
-                <i class="fas fa-pause notactive"></i> -->
               </div>
               <div v-on:click="nextSong" class="player__main-controls-next">
                 <font-awesome-icon :icon="['fas', 'forward']" />
               </div>
             </div>
           </div>
+          <!-- <div class="feedback">
+            <p class="feedback__text">
+              This guy makes bangers! He took the things I gave him and he made
+              a track that came out better than I'd imagine.
+            </p>
+            <div class="feedback__nameimg">
+              <div class="feedback__nameimg-img">
+                <img
+                  class="feedback__nameimg-img-src"
+                  src="../assets/img/circle-cropped-1.png"
+                  width="50"
+                  alt=""
+                />
+              </div>
+              <p class="feedback__nameimg-name">Brascomb</p>
+            </div>
+          </div> -->
         </div>
         <div class="feedback">
           <p class="feedback__text">
@@ -76,12 +82,32 @@
           </div>
         </div>
       </div>
+      <div class="work-page__main-music">
+        <div>
+          <img class="main" src="../assets/img/IMG_2083.png" alt="" />
+        </div>
+        <!-- <div class="feedback">
+          <p class="feedback__text">
+            This guy makes bangers! He took the things I gave him and he made a
+            track that came out better than I'd imagine.
+          </p>
+          <div class="feedback__nameimg">
+            <div class="feedback__nameimg-img">
+              <img
+                class="feedback__nameimg-img-src"
+                src="../assets/img/circle-cropped-1.png"
+                width="50"
+                alt=""
+              />
+            </div>
+            <p class="feedback__nameimg-name">Brascomb</p>
+          </div>
+        </div> -->
+      </div>
     </div>
   </section>
 </template>
 <script>
-// @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
 import ColorThief from "colorthief";
 export default {
   name: "Work",
@@ -255,11 +281,16 @@ $greenblue: #00adb5;
     } //1800
   }
 }
+.main {
+  position: absolute;
+  max-width: 47%;
+  bottom: 0;
+  right: -7rem;
+}
 .work-page__main {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  // display: flex;
+  // justify-content: flex-start;
+  width: 60%;
   @include respond(tab-land) {
     margin-top: 10rem;
   }
@@ -268,9 +299,11 @@ $greenblue: #00adb5;
   // margin: -4rem 5rem 0 5rem;
   &-animation {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 7rem;
+    // position: relative;
+    // margin-left: 7rem;
     @include respond(tab-port) {
       position: absolute;
       margin-left: 0;
@@ -279,19 +312,9 @@ $greenblue: #00adb5;
       transform: translate(-50%, -50%);
     }
   }
-  &-animation-img {
-    visibility: hidden;
-    position: relative;
-    z-index: 1;
-    align-self: flex-end;
-    opacity: 1;
-    @include respond(tab-port) {
-      display: none;
-    }
-  }
-  &-animation-block {
-    width: 45rem;
-    min-height: 45rem;
+  &-animation-block1 {
+    width: 40rem;
+    min-height: 40rem;
     border-radius: 50%;
     background: transparent;
     opacity: 2;
@@ -301,8 +324,8 @@ $greenblue: #00adb5;
     //   0 0 15rem lighten($greenblue, 40%);
   }
   &-animation-block2 {
-    width: 35rem;
-    min-height: 35rem;
+    width: 30rem;
+    min-height: 30rem;
     border-radius: 50%;
     background: transparent;
     opacity: 2;
@@ -311,8 +334,8 @@ $greenblue: #00adb5;
     // box-shadow: 0 0 15rem lighten(white, 40%), 0 0 15rem lighten(white, 40%);
   }
   &-animation-block3 {
-    width: 25rem;
-    min-height: 25rem;
+    width: 20rem;
+    min-height: 20rem;
     border-radius: 50%;
     background: transparent;
     opacity: 2;
@@ -321,10 +344,13 @@ $greenblue: #00adb5;
     // box-shadow: 0 0 15rem lighten(blue, 40%), 0 0 15rem lighten(blue, 40%);
   }
   &-music {
-    margin-top: 6rem;
+    // margin-top: 6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    // img {
+    //   width: 20%;
+    // }
     @include respond(tab-port) {
       position: absolute;
       left: 50%;
@@ -337,11 +363,12 @@ $greenblue: #00adb5;
 .player {
   color: $greenblue;
   font-size: 2rem;
-  max-width: 55%;
-  // width: 35rem;
+  // max-width: 45%;
+  width: 35rem;
   height: 35rem;
   // height: 79%;
   position: relative;
+  top: 6rem;
   @include respond(tab-port) {
     margin-bottom: -3rem;
   }
@@ -396,15 +423,16 @@ $greenblue: #00adb5;
     }
   }
 }
-.play-circle {
-  filter: drop-shadow(0 0 0.75rem crimson);
-}
+// .play-circle {
+//   filter: drop-shadow(0 0 0.75rem crimson);
+// }
 
 .feedback {
   color: white;
-  width: 50rem;
+  font-family: "Source Sans Pro", sans-serif;
+  width: 60%;
   font-size: 1.7rem;
-  margin-top: 3rem;
+  margin-top: 6rem;
   @include respond(tab-port) {
     margin-top: 5rem;
     width: 90%;
