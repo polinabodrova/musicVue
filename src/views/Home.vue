@@ -145,9 +145,10 @@ $greenblue: #00adb5;
       }
     }
     &-p {
-      padding-top: 2.5rem;
+      padding-top: 3rem;
       font-size: 2rem;
-      width: 50%;
+      width: 70%;
+      text-align: center;
       @include respond(tab-port) {
         text-align: center;
         margin-top: 2rem;

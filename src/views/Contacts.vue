@@ -8,6 +8,17 @@
   <div>
     <logo-section />
     <div class="contacts">
+      <div class="contacts__social">
+        <div class="k">
+          <img src="../assets/img/fiverr.svg" width="40" alt="" />
+        </div>
+        <div class="k">
+          <img src="../assets/img/facebook.svg" width="40" alt="" />
+        </div>
+        <div class="k">
+          <img src="../assets/img/instagram.svg" width="40" alt="" />
+        </div>
+      </div>
       <div class="contacts__form">
         <h2>Get <span>in</span> touch</h2>
         <p>
@@ -82,7 +93,7 @@
             </div>
           </div>
         </form>
-        <div class="contacts__social">
+        <!-- <div class="contacts__social">
           <div class="k">
             <img src="../assets/img/fiverr.svg" width="40" alt="" />
           </div>
@@ -92,7 +103,7 @@
           <div class="k">
             <img src="../assets/img/instagram.svg" width="40" alt="" />
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="contacts-img">
         <img src="../assets/img/sasha.png" alt="" />
@@ -195,7 +206,7 @@ $greenblue: #00adb5;
   }
   &__form {
     color: white;
-    width: 40%;
+    width: 50%;
     & p {
       margin: 1.5rem 0;
       width: 100%;
@@ -267,15 +278,16 @@ $greenblue: #00adb5;
   }
   &__social {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 3.5rem;
+    align-items: center;
+    width: 5%;
     & img {
-      opacity: 0.5;
-      margin-left: 2rem;
+      opacity: 0.4;
+      // margin-left: 2rem;
       cursor: pointer;
       &:hover {
-        opacity: 0.9;
+        opacity: 0.8;
       }
     }
   }

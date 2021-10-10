@@ -108,7 +108,6 @@
   </section>
 </template>
 <script>
-import ColorThief from "colorthief";
 export default {
   name: "Work",
   components: {
@@ -145,9 +144,10 @@ export default {
   mounted() {
     const img = document.querySelector(".player-img");
     img.addEventListener("load", function () {
-      const colorThief = new ColorThief();
-      // colorThief.getColor(img);
-      const palette = colorThief.getPalette(img);
+      const palette = [
+        [240, 248, 247],
+        [114, 163, 176],
+      ];
       const div = document.getElementsByClassName("round");
       div.forEach(
         (el, i) => (el.style["boxShadow"] = `0 0 15rem rgb(${palette[i]})`)
