@@ -2,24 +2,52 @@
   <section id="pricing">
     <logo-section />
     <div class="main">
+      <ModalContact ref="modalRef" :modificator="mod" />
       <div class="price__container">
-        <div class="price__container-item">
+        <div class="price__container-item" @click="show('basic')">
           <div class="price__container-item-head">30 $ BASIC</div>
-          <div class="price__container-item-main"></div>
+          <div class="price__container-item-main">
+            Simple demo beat. Up to 2 minutes. Non exclusive license.
+          </div>
         </div>
-        <div class="price__container-item">
+        <div class="price__container-item" @click="show('standart')">
           <div class="price__container-item-head">40 $ STANDARD</div>
-          <div class="price__container-item-main"></div>
+          <div class="price__container-item-main">
+            Custom beat up to 4 minutes. Exclusive license.
+          </div>
         </div>
-        <div class="price__container-item">
+        <div class="price__container-item" @click="show('premium')">
           <div class="price__container-item-head">50 $ PREMIUM</div>
-          <div class="price__container-item-main"></div>
+          <div class="price__container-item-main">
+            Custom beat up to 4 minutes. Exclusive license + Stems.
+          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
-<script></script>
+<script>
+import ModalContact from "../components/ModalContact.vue";
+export default {
+  name: "Pricing",
+  components: { ModalContact },
+  data() {
+    return {
+      mod: "default",
+    };
+  },
+  methods: {
+    show(pack) {
+      this.mod = pack;
+      this.$refs.modalRef.show();
+    },
+    hide() {
+      this.$refs.modalRef.hide();
+    },
+  },
+  mount() {},
+};
+</script>
 <style scoped lang="scss">
 $main: #393e46;
 $greenblue: #00adb5;

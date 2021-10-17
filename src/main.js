@@ -1,6 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
+import VModal from 'vue-js-modal'
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faForward,
@@ -18,6 +19,7 @@ Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.component("logo-section", Logo);
 Vue.use(Vuelidate);
 Vue.config.productionTip = false;
+Vue.use(VModal)
 
 new Vue({
   router,

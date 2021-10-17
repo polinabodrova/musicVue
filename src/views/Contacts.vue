@@ -26,73 +26,7 @@
           me directly through social media or fill out the form and I'll get
           back to you soon
         </p>
-        <form v-on:submit.prevent>
-          <div class="contacts__form-field">
-            <label for="name">Your name:</label><br />
-            <input
-              class="contacts__form-input"
-              type="text"
-              id="name"
-              name="name"
-              v-model="name"
-              autocomplete="off"
-              v-bind:class="{ 'error-boarder': $v.name.$invalid }"
-            />
-            <i class="fa fa-user"></i><br />
-          </div>
-          <div class="contacts__form-field">
-            <label for="mail">Your e-mail:</label><br />
-            <input
-              class="contacts__form-input"
-              type="text"
-              id="mail"
-              name="email"
-              v-model.trim="email"
-              autocomplete="off"
-              v-bind:class="{ 'error-boarder': $v.email.$invalid }"
-            />
-            <i class="fa fa-envelope"></i><br />
-          </div>
-          <div class="contacts__form-field">
-            <label for="msg">Your message:</label><br />
-            <textarea
-              class="contacts__form-textarea"
-              name="msg"
-              id="msg"
-              placeholder="Type your message here..."
-              v-model="msg"
-              autocomplete="off"
-              v-bind:class="{ 'error-boarder': $v.msg.$invalid }"
-            ></textarea>
-            <i class="fa fa-comment-alt"></i><br />
-          </div>
-
-          <div class="contacts__form-button">
-            <button v-on:click="submitForm()" type="submit" value="submit">
-              Send message
-            </button>
-            <span class="contacts__form-button-status-positive"
-              >Your massage has been sent</span
-            >
-            <div v-if="$v.name.$error" class="contacts__form-button-status">
-              <span v-if="$v.name.$dirty && !$v.name.required"
-                >Enter your name</span
-              >
-            </div>
-            <div
-              v-else-if="$v.email.$error"
-              class="contacts__form-button-status"
-            >
-              <span v-if="!$v.email.required">E-mail is required</span>
-              <span v-if="email && !$v.email.email"
-                >Enter valid e-mail address</span
-              >
-            </div>
-            <div v-else-if="$v.msg.$error" class="contacts__form-button-status">
-              <span v-if="!$v.msg.required">Enter your message</span>
-            </div>
-          </div>
-        </form>
+        <ContactForm />
         <!-- <div class="contacts__social">
           <div class="k">
             <img src="../assets/img/fiverr.svg" width="40" alt="" />
@@ -113,9 +47,10 @@
 </template>
 <script>
 import { email, required } from "vuelidate/lib/validators";
+import ContactForm from "../components/ContactForm.vue";
 export default {
   name: "Contacts",
-  components: {},
+  components: { ContactForm },
   data() {
     return {
       // displayMessage: true,
