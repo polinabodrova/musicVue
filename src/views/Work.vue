@@ -13,7 +13,7 @@
               v-on:timeupdate="onTimeUpdateListener"
               v-on:ended="ended"
               ref="audio"
-              src="../assets/tracks/na_zare.mp3"
+              src="../assets/tracks/1.mp3"
               class="player__main-audio"
             ></audio>
             <div class="player__main-flex">
@@ -46,28 +46,13 @@
               </div>
             </div>
           </div>
-          <!-- <div class="feedback">
-            <p class="feedback__text">
-              This guy makes bangers! He took the things I gave him and he made
-              a track that came out better than I'd imagine.
-            </p>
-            <div class="feedback__nameimg">
-              <div class="feedback__nameimg-img">
-                <img
-                  class="feedback__nameimg-img-src"
-                  src="../assets/img/circle-cropped-1.png"
-                  width="50"
-                  alt=""
-                />
-              </div>
-              <p class="feedback__nameimg-name">Brascomb</p>
-            </div>
-          </div> -->
         </div>
         <div class="feedback">
           <p class="feedback__text">
-            This guy makes bangers! He took the things I gave him and he made a
-            track that came out better than I'd imagine.
+            Once again Alex has blown my mind away. The production and beat to
+            this one is by far the best, so far! Communication was on point and
+            he understood what the song I had in mind was! Be back again, thank
+            you!
           </p>
           <div class="feedback__nameimg">
             <div class="feedback__nameimg-img">
@@ -78,31 +63,18 @@
                 alt=""
               />
             </div>
-            <p class="feedback__nameimg-name">Brascomb</p>
+            <p class="feedback__nameimg-name">tobythegoatman</p>
           </div>
         </div>
       </div>
       <div class="work-page__main-music">
         <div>
-          <img class="main" src="../assets/img/IMG_2083.png" alt="" />
+          <img
+            class="work-page__main-music-img"
+            src="../assets/img/IMG_2083.png"
+            alt=""
+          />
         </div>
-        <!-- <div class="feedback">
-          <p class="feedback__text">
-            This guy makes bangers! He took the things I gave him and he made a
-            track that came out better than I'd imagine.
-          </p>
-          <div class="feedback__nameimg">
-            <div class="feedback__nameimg-img">
-              <img
-                class="feedback__nameimg-img-src"
-                src="../assets/img/circle-cropped-1.png"
-                width="50"
-                alt=""
-              />
-            </div>
-            <p class="feedback__nameimg-name">Brascomb</p>
-          </div>
-        </div> -->
       </div>
     </div>
   </section>
@@ -117,22 +89,42 @@ export default {
     return {
       feedbacks: [
         {
-          text: "This guy makes bangers! He took the things I gave him and he made a track that came out better than I'd imagine.",
+          text: "Once again Alex has blown my mind away. The production and beat to this one is by far the best, so far! Communication was on point and he understood what the song I had in mind was! Be back again, thank you!",
           picture: "circle-cropped-1.png",
-          name: "Brascomb",
+          name: "tobythegoatman",
         },
         {
-          text: "He is doing an incredible thing. If you’re looking to take your music to the next level, with a real pro sound, this is the guy!",
+          text: "Fantastic delivery, seller has real music handcraft knowledge and will add it into your beat.",
           picture: "circle-cropped-2.png",
-          name: "Jack",
+          name: "branschforum",
         },
         {
-          text: "I loved the communication and the final result. Very happy working with him. I would totally recommend.",
-          picture: "circle-cropped-3.png",
-          name: "Anna",
+          text: "Honestly for what I asked for? He made an amazing beat! It was just the right amount of edgy with a tinge of rock! I'm very happy and I can't wait to add vocals to it!!",
+          picture: "circle-cropped-2.png",
+          name: "elizabethbars",
+        },
+        {
+          text: "Very attentive to what I wanted... and BOY did he DELIVER!!!",
+          picture: "circle-cropped-2.png",
+          name: "ajonz76",
+        },
+        {
+          text: "My man made a FIRE beat in no time at all! He made the minor changes I requested and got back to me so fast! I will be using him again in the future!",
+          picture: "circle-cropped-2.png",
+          name: "burleyboypod",
+        },
+        {
+          text: "Above and Beyond. Not only provided the request I made, but added things to the song I did not expect that made it sound VERY NICE. I am very proud of this. I definitely recommend!",
+          picture: "circle-cropped-2.png",
+          name: "itsjuss4",
+        },
+        {
+          text: "Seller made exactly what I asked for and had an extremely fast turn around time to have it delivered to me.",
+          picture: "circle-cropped-2.png",
+          name: "alvaartistmgmt",
         },
       ],
-      songs: ["na_zare", "melody", "waiting"],
+      songs: ["1", "2", "3", "4", "5", "6", "7"],
       currentSongIndex: 0,
       currentFeedbackIndex: 0,
       analizer: null,
@@ -157,13 +149,19 @@ export default {
   },
   methods: {
     src() {
-      if (this.songs[this.currentSongIndex] === "na_zare") {
-        return "na_zare.svg";
-      } else if (this.songs[this.currentSongIndex] === "melody") {
-        return "melody.svg";
-      } else if (this.songs[this.currentSongIndex] === "waiting") {
-        return "waiting.svg";
-      }
+      if (this.songs[this.currentSongIndex] === "1") {
+        return "1.svg";
+      } else if (this.songs[this.currentSongIndex] === "2") {
+        return "2.svg";
+      } else if (this.songs[this.currentSongIndex] === "3") {
+        return "3.svg";
+      } else if (this.songs[this.currentSongIndex] === "4") {
+        return "4.svg";
+      } else if (this.songs[this.currentSongIndex] === "5") {
+        return "5.svg";
+      } else if (this.songs[this.currentSongIndex] === "6") {
+        return "6.svg";
+      } else return "7.svg";
     },
     playSong() {
       this.playButton = !this.playButton;
@@ -262,38 +260,33 @@ $main: #393e46;
 $greenblue: #00adb5;
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
-    @media (max-width: 37.5em) {
+    @media (max-width: 600px) {
       @content;
     } // 600px
   }
   @if $breakpoint == tab-port {
-    @media (max-width: 56.25em) {
+    @media (max-width: 900px) {
       @content;
     } // 900px
   }
   @if $breakpoint == tab-land {
-    @media (max-width: 75em) {
+    @media (max-width: 1200px) {
       @content;
     } //1200px
   }
   @if $breakpoint == big-desktop {
-    @media (min-width: 112.5em) {
+    @media (min-width: 1800px) {
       @content;
     } //1800
   }
 }
-.main {
-  position: absolute;
-  max-width: 47%;
-  bottom: 0;
-  right: -7rem;
+#section {
+  height: 100vh;
 }
 .work-page__main {
-  // display: flex;
-  // justify-content: flex-start;
-  width: 60%;
+  width: 55%;
   @include respond(tab-land) {
-    margin-top: 10rem;
+    width: 37%;
   }
   @include respond(tab-port) {
   }
@@ -303,8 +296,6 @@ $greenblue: #00adb5;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // position: relative;
-    // margin-left: 7rem;
     @include respond(tab-port) {
       position: absolute;
       margin-left: 0;
@@ -345,20 +336,26 @@ $greenblue: #00adb5;
     // box-shadow: 0 0 15rem lighten(blue, 40%), 0 0 15rem lighten(blue, 40%);
   }
   &-music {
-    // margin-top: 6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    // img {
-    //   width: 20%;
-    // }
-    @include respond(tab-port) {
+    &-img {
       position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
+      min-height: 800px;
+      height: 95vh;
+      bottom: 0;
+      right: -7rem;
+      @include respond(tab-port) {
+        display: none;
+      }
     }
+    // @include respond(tab-land) {
+    //   position: absolute;
+    //   left: 50%;
+    //   top: 50%;
+    //   transform: translate(-50%, -50%);
+    //   width: 100%;
+    // }
   }
 }
 .player {
@@ -370,7 +367,7 @@ $greenblue: #00adb5;
   // height: 79%;
   position: relative;
   top: 6rem;
-  @include respond(tab-port) {
+  @include respond(tab-land) {
     margin-bottom: -3rem;
   }
   &-img {

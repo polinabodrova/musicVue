@@ -10,7 +10,10 @@
           alt=""
         />
         <p class="home-page__main-container-text-p">
-          Alex is a freelance music producer and beatmaker. His experience and
+          <span class="home-page__main-container-text-p-first-word">
+            Alex
+          </span>
+          is a freelance music producer and beatmaker. His experience and
           inspiration is what makes his beats unique and colorful. The beats he
           creates are thoughtfully handcrafted and tailored for you.
         </p>
@@ -46,12 +49,12 @@ $main: #393e46;
 $greenblue: #00adb5;
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
-    @media (max-width: 37.5em) {
+    @media (max-width: 600px) {
       @content;
     } // 600px
   }
   @if $breakpoint == tab-port {
-    @media (max-width: 56.25em) {
+    @media (max-width: 900px) {
       @content;
     } // 900px
   }
@@ -61,12 +64,12 @@ $greenblue: #00adb5;
   //   } //NEW
   // }
   @if $breakpoint == tab-land {
-    @media (max-width: 75em) {
+    @media (max-width: 1279px) {
       @content;
     } //1200px
   }
   @if $breakpoint == big-desktop {
-    @media (min-width: 112.5em) {
+    @media (min-width: 1800px) {
       @content;
     } //1800
   }
@@ -76,7 +79,7 @@ $greenblue: #00adb5;
 }
 #home {
   height: 93vh;
-  @include respond(tab-port) {
+  @include respond(tab-land) {
     position: relative;
   }
 }
@@ -85,28 +88,28 @@ $greenblue: #00adb5;
   display: flex;
   height: 99%;
   min-height: 700px;
-  // align-items: center;
   background-color: rgba(250, 249, 254, 0.1);
   margin-left: 1rem;
 
-  @include respond(tab-port) {
+  @include respond(tab-land) {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 95%;
     margin-left: 0;
+    min-height: 500px;
   }
   &-img {
     height: 100vh;
-    min-height: 700px;
+    min-height: 800px;
     position: absolute;
     top: 0;
     right: 0;
     img {
       max-height: 100%;
     }
-    @include respond(tab-port) {
+    @include respond(tab-land) {
       display: none;
     }
   }
@@ -118,28 +121,23 @@ $greenblue: #00adb5;
     flex-direction: column;
     align-items: center;
     align-self: center;
-    @include respond(tab-port) {
+    @include respond(tab-land) {
       width: 90%;
       margin: 0 auto;
     }
     img {
-      @include respond(tab-port) {
+      @include respond(tab-land) {
         max-width: 95%;
         min-width: 100%;
-        // height: auto;
         display: inline-block;
         margin: auto;
-        // width: 60%;
       }
-      // @include respond(phone) {
-      //   width: 90%;
-      // }
     }
     &-h {
       font-size: 4rem;
       text-transform: uppercase;
       font-weight: 500;
-      @include respond(tab-port) {
+      @include respond(tab-land) {
         text-align: center;
         font-size: 3rem;
         margin-bottom: 1.5rem;
@@ -150,17 +148,18 @@ $greenblue: #00adb5;
       font-size: 2rem;
       width: 70%;
       text-align: center;
-      @include respond(tab-port) {
+      &-first-word {
+        font-weight: 600;
+      }
+      @include respond(tab-land) {
+        width: 90%;
         text-align: center;
         margin-top: 2rem;
       }
     }
   }
-  @include respond(tab-port) {
-    // justify-content: center;
-  }
   .container {
-    @include respond(tab-port) {
+    @include respond(tab-land) {
       display: flex;
       justify-content: center;
     }

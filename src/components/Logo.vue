@@ -49,8 +49,8 @@ $greenblue: #00adb5;
 }
 .logo-text {
   position: relative;
-  left: 5rem;
-  margin-top: 3rem;
+  left: 3rem;
+  // margin-top: 0.5rem;
   z-index: 2;
   @include respond(tab-port) {
     top: 10%;
