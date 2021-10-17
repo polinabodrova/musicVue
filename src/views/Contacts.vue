@@ -280,14 +280,13 @@ $greenblue: #00adb5;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 5%;
     & img {
-      opacity: 0.4;
+      opacity: 0.7;
       // margin-left: 2rem;
       cursor: pointer;
       &:hover {
-        opacity: 0.8;
+        opacity: 0.9;
       }
     }
   }

@@ -147,6 +147,7 @@ export default {
       const palette = [
         [240, 248, 247],
         [114, 163, 176],
+        [230, 238, 237],
       ];
       const div = document.getElementsByClassName("round");
       div.forEach(
