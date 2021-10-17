@@ -265,7 +265,7 @@ $greenblue: #00adb5;
     } // 600px
   }
   @if $breakpoint == tab-port {
-    @media (max-width: 900px) {
+    @media (max-width: 1070px) {
       @content;
     } // 900px
   }
@@ -286,9 +286,9 @@ $greenblue: #00adb5;
 .work-page__main {
   width: 55%;
   @include respond(tab-land) {
-    width: 37%;
+    width: 40%;
   }
-  @include respond(tab-port) {
+  @include respond(phone) {
   }
   // margin: -4rem 5rem 0 5rem;
   &-animation {
@@ -296,12 +296,23 @@ $greenblue: #00adb5;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1.5rem;
     @include respond(tab-port) {
       position: absolute;
       margin-left: 0;
       left: 50%;
       top: 47%;
       transform: translate(-50%, -50%);
+    }
+    @include respond(phone) {
+      position: absolute;
+      margin-left: 0;
+      left: 50%;
+      top: 55%;
+      transform: translate(-50%, -50%);
+    }
+    @include respond(phone) {
+      margin-top: 2rem;
     }
   }
   &-animation-block1 {
@@ -341,8 +352,9 @@ $greenblue: #00adb5;
     align-items: center;
     &-img {
       position: absolute;
-      min-height: 800px;
+      min-height: 750px;
       height: 95vh;
+      top: 4rem;
       bottom: 0;
       right: -7rem;
       @include respond(tab-port) {
@@ -433,14 +445,15 @@ $greenblue: #00adb5;
   margin-top: 6rem;
   @include respond(tab-port) {
     margin-top: 5rem;
-    width: 90%;
+    width: 100%;
   }
   &__text {
     text-align: center;
     margin-top: 2rem;
-    @include respond(tab-port) {
-      // min-width: 60%;
-      // padding: 2.5rem;
+    @include respond(tab-land) {
+      margin-top: 4.5rem;
+    }
+    @include respond(phone) {
     }
   }
   &__nameimg {

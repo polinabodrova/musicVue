@@ -101,13 +101,14 @@ $greenblue: #00adb5;
     min-height: 500px;
   }
   &-img {
-    height: 100vh;
-    min-height: 800px;
+    // height: 100vh;
+    // min-height: 800px;
     position: absolute;
     top: 0;
     right: 0;
     img {
-      max-height: 100%;
+      height: 100vh;
+      min-height: 700px;
     }
     @include respond(tab-land) {
       display: none;
