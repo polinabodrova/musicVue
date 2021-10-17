@@ -66,12 +66,14 @@ import { email, required } from "vuelidate/lib/validators";
 
 export default {
   name: "contact-form",
+  props: ["modificator"],
   data() {
     return {
       // displayMessage: true,
       name: "",
       email: "",
       msg: "",
+      // modificator: "default",
     };
   },
   validations: {
@@ -95,7 +97,11 @@ export default {
         this.$v.$touch();
         return false;
       } else {
-        const newMessage = `Name:${name} E-mail:${email} Message:${message}`;
+        const newMessage = `
+        Name:${name} 
+        Modificator: ${this.modificator || "from contact page"} 
+        E-mail: ${email} 
+        Message: ${message}`;
         const token = `1960776155:AAEbt5s2YGVHFpDOrFwgsqhp2WrfDYUW29Q`;
         fetch(
           `https://api.telegram.org/bot${token}/sendMessage?chat_id=915692945&text=${newMessage}`

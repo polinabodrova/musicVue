@@ -1,13 +1,13 @@
-git pull
 <template>
   <modal name="my-first-modal">
-    <ContactForm />
+    <ContactForm :modificator="modificator" />
   </modal>
 </template>
 
 <script>
 import ContactForm from "../components/ContactForm.vue";
 export default {
+  props: ["modificator"],
   name: "MyComponent",
   components: { ContactForm },
   methods: {
