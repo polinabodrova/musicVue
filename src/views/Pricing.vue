@@ -80,7 +80,7 @@ $greenblue: #00adb5;
 }
 .main {
   position: absolute;
-  background-image: url(../assets/video/pexels-cottonbro.gif);
+  background-image: url(../assets/img/background_sasha.jpg);
   background-size: cover;
   min-height: 100%;
   min-width: 100%;
@@ -90,7 +90,7 @@ $greenblue: #00adb5;
   display: flex;
   justify-content: center;
   position: relative;
-  margin-top: 25rem;
+  margin-top: 20rem;
   flex-wrap: wrap;
   cursor: pointer;
   @include respond(tab-port) {

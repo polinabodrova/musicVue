@@ -8,17 +8,6 @@
   <div>
     <logo-section />
     <div class="contacts">
-      <div class="contacts__social">
-        <div class="k">
-          <img src="../assets/img/fiverr.svg" width="40" alt="" />
-        </div>
-        <div class="k">
-          <img src="../assets/img/facebook.svg" width="40" alt="" />
-        </div>
-        <div class="k">
-          <img src="../assets/img/instagram.svg" width="40" alt="" />
-        </div>
-      </div>
       <div class="contacts__form">
         <h2>Get <span>in</span> touch</h2>
         <p>
@@ -40,7 +29,18 @@
         </div> -->
       </div>
       <div class="contacts-img">
-        <img src="../assets/img/sasha.png" alt="" />
+        <img src="../assets/img/IMG_2094.png" alt="sasha-v-profil" />
+      </div>
+      <div class="contacts__social">
+        <div class="k">
+          <img src="../assets/img/fiverr.svg" width="40" alt="" />
+        </div>
+        <div class="k">
+          <img src="../assets/img/facebook.svg" width="40" alt="" />
+        </div>
+        <div class="k">
+          <img src="../assets/img/instagram.svg" width="40" alt="" />
+        </div>
       </div>
     </div>
   </div>
@@ -96,7 +96,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 $main: #393e46;
 $greenblue: #00adb5;
 @mixin respond($breakpoint) {
@@ -127,7 +127,7 @@ $greenblue: #00adb5;
   }
 }
 .contacts {
-  margin-top: 2.5rem;
+  margin-top: -3.5rem;
   display: flex;
   flex-direction: row;
   font-size: 1.8rem;
@@ -190,6 +190,8 @@ $greenblue: #00adb5;
       margin: 0.6rem 0;
       color: white;
       padding-top: 0.5rem;
+      resize: none;
+
       &:focus {
         border: 0.2rem solid $greenblue;
         & ~ i {
@@ -212,10 +214,12 @@ $greenblue: #00adb5;
     }
   }
   &__social {
+    position: absolute;
+    bottom: 1rem;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     justify-content: center;
-    width: 5%;
+    // width: 50%;
     & img {
       opacity: 0.7;
       // margin-left: 2rem;
@@ -259,7 +263,7 @@ $greenblue: #00adb5;
 }
 
 .contacts-img {
-  visibility: hidden;
+  // visibility: hidden;
   // display: block;
   @include respond(tab-port) {
     display: none;
