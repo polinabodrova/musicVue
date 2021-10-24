@@ -117,5 +117,34 @@ export default {
   mounted() {},
 };
 </script>
+<style lang="scss" scoped>
+.error-boarder:focus {
+  border: 0.2rem solid rgba(255, 0, 0, 0.601);
+}
 
-<style></style>
+.contacts__form-field {
+  position: relative;
+  & i {
+    position: absolute;
+    left: 1rem;
+    top: 4rem;
+    color: rgba(128, 128, 128, 0.6);
+    // &:focus {
+    //   color: $greenblue;
+    // }
+  }
+}
+.contacts__form-button-status {
+  display: inline-block;
+  padding-left: 2rem;
+  & span {
+    color: red;
+    font-size: 1.9rem;
+  }
+}
+.contacts__form-button-status-positive {
+  padding-left: 2rem;
+  font-size: 1.9rem;
+  display: none;
+}
+</style>
