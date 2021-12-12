@@ -200,6 +200,7 @@ body {
   background-size: cover;
   min-height: 100vh;
   min-width: 100vw;
+  overflow: hidden;
 }
 
 //INITIAL SPLASH PAGE

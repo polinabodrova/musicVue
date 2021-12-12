@@ -21,3 +21,23 @@ export default {
   mount() {},
 };
 </script>
+<style lang="scss">
+.vm--modal {
+  padding: 2rem;
+  background-color: #00adb5 !important;
+  border-radius: 10px !important;
+  height: 55vh !important;
+}
+.label-for-name {
+  color: white;
+  font-size: 2rem;
+}
+.label-for-mail {
+  color: white;
+  font-size: 2rem;
+}
+.label-for-msg {
+  color: white;
+  font-size: 2rem;
+}
+</style>

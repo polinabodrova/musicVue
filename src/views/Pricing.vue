@@ -123,6 +123,7 @@ $greenblue: #00adb5;
       line-height: 7.5rem;
       font-size: 1.7rem;
       transition: 0.3s ease-in-out;
+      text-shadow: 1px 1px 1px #393e46;
       @include respond(tab-port) {
         color: $greenblue;
       }
@@ -133,6 +134,11 @@ $greenblue: #00adb5;
       position: relative;
       border-radius: 1.5rem;
       transition: 0.3s ease-in-out;
+      font-size: 2rem;
+      padding: 2rem;
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 1px #393e46;
       @include respond(tab-port) {
         color: $greenblue;
       }

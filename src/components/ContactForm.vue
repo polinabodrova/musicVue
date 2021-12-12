@@ -1,7 +1,7 @@
 <template>
   <form v-on:submit.prevent>
     <div class="contacts__form-field">
-      <label for="name">Your name:</label><br />
+      <label class="label-for-name" for="name">Your name:</label><br />
       <input
         class="contacts__form-input"
         type="text"
@@ -14,7 +14,7 @@
       <i class="fa fa-user"></i><br />
     </div>
     <div class="contacts__form-field">
-      <label for="mail">Your e-mail:</label><br />
+      <label class="label-for-mail" for="mail">Your e-mail:</label><br />
       <input
         class="contacts__form-input"
         type="text"
@@ -27,7 +27,7 @@
       <i class="fa fa-envelope"></i><br />
     </div>
     <div class="contacts__form-field">
-      <label for="msg">Your message:</label><br />
+      <label class="label-for-msg" for="msg">Your message:</label><br />
       <textarea
         class="contacts__form-textarea"
         name="msg"
@@ -117,7 +117,7 @@ export default {
   mounted() {},
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .error-boarder:focus {
   border: 0.2rem solid rgba(255, 0, 0, 0.601);
 }
