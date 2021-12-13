@@ -41,7 +41,12 @@
     </div>
 
     <div class="contacts__form-button">
-      <button v-on:click="submitForm()" type="submit" value="submit">
+      <button
+        v-on:click="submitForm()"
+        class="submit-btn"
+        type="submit"
+        value="submit"
+      >
         Send message
       </button>
       <span class="contacts__form-button-status-positive"
@@ -112,12 +117,25 @@ export default {
           mailStatus.style.display = "none";
         }, 3000);
       }
+      this.msg = "";
+      this.email = "";
+      this.name = "";
     },
   },
   mounted() {},
 };
 </script>
 <style lang="scss">
+.submit-btn {
+  font-size: 1.5rem;
+  width: 12rem;
+  height: 4.5rem;
+  background-color: #00adb5;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-family: inherit;
+}
 .error-boarder:focus {
   border: 0.2rem solid rgba(255, 0, 0, 0.601);
 }
@@ -146,5 +164,9 @@ export default {
   padding-left: 2rem;
   font-size: 1.9rem;
   display: none;
+}
+.k {
+  margin: 1rem;
+  filter: grayscale(0.8);
 }
 </style>

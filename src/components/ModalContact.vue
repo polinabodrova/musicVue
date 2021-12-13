@@ -24,9 +24,13 @@ export default {
 <style lang="scss">
 .vm--modal {
   padding: 2rem;
-  background-color: #00adb5 !important;
+  background-color: #252525 !important;
   border-radius: 10px !important;
   height: 55vh !important;
+}
+.vm--overlay {
+  background-color: black !important;
+  opacity: 0.7 !important;
 }
 .label-for-name {
   color: white;

@@ -130,13 +130,14 @@ $greenblue: #00adb5;
     }
     &-main {
       height: 30rem;
-      background-color: #c4c4c4;
+      background-color: #bdb5b5;
       position: relative;
       border-radius: 1.5rem;
       transition: 0.3s ease-in-out;
       font-size: 2rem;
       padding: 2rem;
       text-align: center;
+      padding-top: 7rem;
       color: white;
       text-shadow: 1px 1px 1px #393e46;
       @include respond(tab-port) {

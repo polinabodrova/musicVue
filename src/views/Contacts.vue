@@ -33,13 +33,22 @@
       </div>
       <div class="contacts__social">
         <div class="k">
-          <img src="../assets/img/fiverr.svg" width="40" alt="" />
+          <a href="https://www.fiverr.com/gigantballs" target="_blank">
+            <img src="../assets/img/fiverr.svg" width="40" alt=""
+          /></a>
         </div>
         <div class="k">
-          <img src="../assets/img/facebook.svg" width="40" alt="" />
+          <a
+            href="https://www.facebook.com/alexandr.naumov.564"
+            target="_blank"
+          >
+            <img src="../assets/img/facebook.svg" width="40" alt="" />
+          </a>
         </div>
         <div class="k">
-          <img src="../assets/img/instagram.svg" width="40" alt="" />
+          <a href="https://www.instagram.com/gigantballs" target="_blank">
+            <img src="../assets/img/instagram.svg" width="40" alt="" />
+          </a>
         </div>
       </div>
     </div>
@@ -127,8 +136,9 @@ $greenblue: #00adb5;
   }
 }
 .contacts {
-  margin-top: -3.5rem;
-  display: flex;
+  margin-top: 6rem;
+  margin-left: 6rem;
+  display: relative;
   flex-direction: row;
   font-size: 1.8rem;
   line-height: 2.8rem;
@@ -204,17 +214,17 @@ $greenblue: #00adb5;
       }
     }
     & button {
-      padding: 1.5rem 2.5rem;
+      // padding: 1.5rem 2.5rem;
       border-radius: 1rem;
       background-color: $greenblue;
       border: none;
       cursor: pointer;
-      font-family: Lato;
+      // font-family: Lato;
       font-size: 1.5rem;
     }
   }
   &__social {
-    position: absolute;
+    position: relative;
     bottom: 1rem;
     display: flex;
     // flex-direction: column;
@@ -234,6 +244,14 @@ $greenblue: #00adb5;
 .contacts-img {
   // visibility: hidden;
   // display: block;
+  position: absolute;
+  right: 3rem;
+  bottom: 0;
+  img {
+    position: relative;
+    height: 100%;
+    bottom: 0;
+  }
   @include respond(tab-port) {
     display: none;
   }
