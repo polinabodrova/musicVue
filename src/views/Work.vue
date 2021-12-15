@@ -58,7 +58,7 @@
             <div class="feedback__nameimg-img">
               <img
                 class="feedback__nameimg-img-src"
-                src="../assets/img/circle-cropped-1.png"
+                src="../assets/img/user.png"
                 width="50"
                 alt=""
               />
@@ -90,37 +90,30 @@ export default {
       feedbacks: [
         {
           text: "Once again Alex has blown my mind away. The production and beat to this one is by far the best, so far! Communication was on point and he understood what the song I had in mind was! Be back again, thank you!",
-          picture: "circle-cropped-1.png",
           name: "tobythegoatman",
         },
         {
           text: "Fantastic delivery, seller has real music handcraft knowledge and will add it into your beat.",
-          picture: "circle-cropped-2.png",
           name: "branschforum",
         },
         {
           text: "Honestly for what I asked for? He made an amazing beat! It was just the right amount of edgy with a tinge of rock! I'm very happy and I can't wait to add vocals to it!!",
-          picture: "circle-cropped-2.png",
           name: "elizabethbars",
         },
         {
           text: "Very attentive to what I wanted... and BOY did he DELIVER!!!",
-          picture: "circle-cropped-2.png",
           name: "ajonz76",
         },
         {
           text: "My man made a FIRE beat in no time at all! He made the minor changes I requested and got back to me so fast! I will be using him again in the future!",
-          picture: "circle-cropped-2.png",
           name: "burleyboypod",
         },
         {
           text: "Above and Beyond. Not only provided the request I made, but added things to the song I did not expect that made it sound VERY NICE. I am very proud of this. I definitely recommend!",
-          picture: "circle-cropped-2.png",
           name: "itsjuss4",
         },
         {
           text: "Seller made exactly what I asked for and had an extremely fast turn around time to have it delivered to me.",
-          picture: "circle-cropped-2.png",
           name: "alvaartistmgmt",
         },
       ],
@@ -206,7 +199,7 @@ export default {
       const img = document.querySelector(".feedback__nameimg-img-src");
       const name = document.querySelector(".feedback__nameimg-name");
       feedbackText.innerHTML = `${el.text}`;
-      img.src = require(`../assets/img/${el.picture}`);
+      img.src = require('../assets/img/user.png');
       name.innerHTML = `${el.name}`;
     },
     prevSong() {
@@ -296,7 +289,10 @@ $greenblue: #00adb5;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
+    position: absolute;
+    width: 80%;
+    left: -15rem;
     @include respond(tab-port) {
       position: absolute;
       margin-left: 0;

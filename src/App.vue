@@ -70,7 +70,7 @@
         >
           <img
             class="pic"
-            src="./assets/initial-page-background/5-opt.jpg"
+            src="./assets/img/5-opt.jpg"
             alt=""
           />
           <div class="initial-page__logo">
@@ -212,9 +212,6 @@ body {
   width: 100%;
   height: 100%;
   background-color: #07090f;
-  // background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
-  // background-image: url(./assets/img/curve.svg);
-  // background-image: url(./assets/initial-page-background/5-opt.jpg);
   background-size: cover;
   transition: 1.2s;
   font-size: 11rem;

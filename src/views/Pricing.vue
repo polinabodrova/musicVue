@@ -1,25 +1,47 @@
 <template>
   <section id="pricing">
     <logo-section />
-    <div class="main">
+    <div class="main-container">
       <ModalContact ref="modalRef" :modificator="mod" />
       <div class="price__container">
         <div class="price__container-item" @click="show('basic')">
-          <div class="price__container-item-head">30 $ BASIC</div>
+          
           <div class="price__container-item-main">
-            Simple demo beat. Up to 2 minutes. Non exclusive license.
+            <div class="price__container-picture picture--1">
+            </div>
+            <h3>BASIC</h3>
+            <ul>
+              <li>Simple demo beat</li>
+              <li>(up to 2 minutes)</li>
+              <li>Non exclusive license</li>
+            </ul>
+            <p>$30</p>
           </div>
         </div>
         <div class="price__container-item" @click="show('standart')">
-          <div class="price__container-item-head">40 $ STANDARD</div>
           <div class="price__container-item-main">
-            Custom beat up to 4 minutes. Exclusive license.
+            <div class="price__container-picture picture--2">
+            </div>
+            <h3>STANDARD</h3>
+            <ul>
+              <li>Custom beat</li>
+              <li>(up to 4 minutes)</li>
+              <li>Exclusive license</li>
+            </ul>
+            <p>$40</p>
           </div>
         </div>
         <div class="price__container-item" @click="show('premium')">
-          <div class="price__container-item-head">50 $ PREMIUM</div>
           <div class="price__container-item-main">
-            Custom beat up to 4 minutes. Exclusive license + Stems.
+            <div class="price__container-picture picture--3">
+            </div>
+            <h3>PREMIUM</h3>
+            <ul>
+              <li>Custom beat</li>
+              <li>(up to 4 minutes)</li>
+              <li>Exclusive license + Stems</li>
+            </ul>
+            <p>$50</p>
           </div>
         </div>
       </div>
@@ -78,9 +100,36 @@ $greenblue: #00adb5;
     } //1800
   }
 }
-.main {
+h3{
+  color: $greenblue;
+}
+
+p{
+  padding: 0.5rem;
+  font-size: 2.5rem;
+}
+
+.price__container-picture{
+  background-blend-mode: color;
+  background-size: cover;
+  height: 20rem;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.picture--1 {
+  background-image: linear-gradient(to right bottom, $greenblue, $main ),url(../assets/img/guitar2.jpg);
+}
+.picture--2 {
+  background-image: linear-gradient(to right bottom, $greenblue, $main),url(../assets/img/piano.jpg);
+}
+.picture--3 {
+  background-image: linear-gradient(to right bottom, $greenblue, $main ),url(../assets/img/studio.jpg);
+}
+.main-container {
   position: absolute;
-  background-image: url(../assets/img/background_sasha.jpg);
+  background-color: #5b6467;
+background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%),url(../assets/img/background_sasha.jpg);
+  background-blend-mode: multiply;
   background-size: cover;
   min-height: 100%;
   min-width: 100%;
@@ -94,54 +143,31 @@ $greenblue: #00adb5;
   flex-wrap: wrap;
   cursor: pointer;
   @include respond(tab-port) {
-    margin-top: 15rem;
-    // height: 60rem;
+    margin-top: 20rem;
   }
-  // z-index: 5;
   &-item {
     position: relative;
-    flex-basis: 25rem;
+    flex-basis: 27rem;
     height: auto;
-    margin: 2rem;
-    &:hover &-head {
-      color: $greenblue !important;
-      transform: translateY(-2rem);
-    }
+    margin: 3rem;
+    
     &:hover &-main {
-      color: $greenblue !important;
       transform: translateY(-2rem);
+      text-shadow: 1px 1px 7px #000000;
     }
-    &-head {
-      position: relative;
-      height: 7.5rem;
-      width: 100%;
-      background-color: #c4c4c4;
-      border-radius: 1.5rem;
-      color: white;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      line-height: 7.5rem;
-      font-size: 1.7rem;
-      transition: 0.3s ease-in-out;
-      text-shadow: 1px 1px 1px #393e46;
-      @include respond(tab-port) {
-        color: $greenblue;
-      }
-    }
+  
     &-main {
-      height: 30rem;
-      background-color: #bdb5b5;
+      height: 40rem;
+     background-color: #5b64679b;
       position: relative;
-      border-radius: 1.5rem;
+      border-radius: 4px;
       transition: 0.3s ease-in-out;
       font-size: 2rem;
-      padding: 2rem;
       text-align: center;
-      padding-top: 7rem;
       color: white;
-      text-shadow: 1px 1px 1px #393e46;
+      text-shadow: 1px 1px 1px #292c32;
+      overflow: hidden;
       @include respond(tab-port) {
-        color: $greenblue;
       }
     }
   }
