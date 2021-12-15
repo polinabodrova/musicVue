@@ -109,7 +109,7 @@ export default {
         Message: ${message}`;
         const token = `1960776155:AAEbt5s2YGVHFpDOrFwgsqhp2WrfDYUW29Q`;
         fetch(
-          `https://api.telegram.org/bot${token}/sendMessage?chat_id=915692945&text=${newMessage}`
+          `https://api.telegram.org/bot${token}/sendMessage?chat_id=28533096&text=${newMessage}`
         );
         form.reset();
         mailStatus.style.display = "inline-block";
