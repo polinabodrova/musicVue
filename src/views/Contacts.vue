@@ -5,7 +5,7 @@
 
   <!-- "id":915692945 -->
 
-  <div>
+  <div class="main-container">
     <logo-section />
     <div class="contacts">
       <div class="contacts__form">
@@ -16,17 +16,6 @@
           back to you soon
         </p>
         <ContactForm />
-        <!-- <div class="contacts__social">
-          <div class="k">
-            <img src="../assets/img/fiverr.svg" width="40" alt="" />
-          </div>
-          <div class="k">
-            <img src="../assets/img/facebook.svg" width="40" alt="" />
-          </div>
-          <div class="k">
-            <img src="../assets/img/instagram.svg" width="40" alt="" />
-          </div>
-        </div> -->
       </div>
       <div class="contacts-img">
         <img src="../assets/img/IMG_2094.png" alt="sasha-v-profil" />
@@ -135,30 +124,36 @@ $greenblue: #00adb5;
     } //1800
   }
 }
+
 .contacts {
-  margin-top: 6rem;
-  margin-left: 6rem;
-  display: relative;
+  margin-left: 3rem;
   flex-direction: row;
   font-size: 1.8rem;
   line-height: 2.8rem;
   justify-content: space-around;
   align-items: center;
-  // flex-wrap: wrap;
-  @include respond(tab-port) {
-    text-align: center;
-    margin-top: 12rem;
-  }
   &__form {
     color: white;
     width: 50%;
+    position: absolute;
+    top: 18rem;
+    @include respond(tab-port) {
+      width: 55%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    @include respond(phone) {
+      width: 90%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
     & p {
       margin: 1.5rem 0;
       width: 100%;
       @include respond(tab-port) {
-        width: 90%;
-        margin: 1rem auto;
-        padding: 0 1rem;
+        width: 100%;
       }
     }
     & span {
@@ -181,7 +176,7 @@ $greenblue: #00adb5;
         }
       }
       @include respond(tab-port) {
-        width: 80%;
+        width: 100%;
       }
     }
     &-textarea {
@@ -209,30 +204,29 @@ $greenblue: #00adb5;
         }
       }
       @include respond(tab-port) {
-        min-width: 80%;
-        max-width: 80%;
+        min-width: 100%;
+        max-width: 100%;
       }
     }
     & button {
-      // padding: 1.5rem 2.5rem;
       border-radius: 1rem;
       background-color: $greenblue;
       border: none;
       cursor: pointer;
-      // font-family: Lato;
       font-size: 1.5rem;
     }
   }
   &__social {
-    position: relative;
-    bottom: 1rem;
+    position: absolute;
+    bottom: 0.5rem;
     display: flex;
-    // flex-direction: column;
     justify-content: center;
-    // width: 50%;
+    width: 50%;
+    @include respond(tab-port) {
+      width: 100%;
+    }
     & img {
       opacity: 0.7;
-      // margin-left: 2rem;
       cursor: pointer;
       &:hover {
         opacity: 0.9;
@@ -242,18 +236,28 @@ $greenblue: #00adb5;
 }
 
 .contacts-img {
-  // visibility: hidden;
-  // display: block;
   position: absolute;
   right: 3rem;
-  bottom: 0;
-  img {
-    position: relative;
-    height: 100%;
-    bottom: 0;
-  }
+  bottom: -1rem;
+  top: 6rem;
   @include respond(tab-port) {
-    display: none;
+    opacity: 0.25;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @include respond(phone) {
+    opacity: 0.25;
+    left: 10%;
+    transform: translateX(-10%);
+  }
+  img {
+    height: 95vh;
+    min-height: 600px;
+    max-height: 950px;
+    @include respond(phone) {
+      height: 95vh;
+      max-height: 790px;
+    }
   }
 }
 </style>

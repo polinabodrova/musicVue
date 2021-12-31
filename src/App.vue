@@ -68,11 +68,7 @@
           v-bind:class="{ out: initialPageOut }"
           v-if="initialPage"
         >
-          <img
-            class="pic"
-            src="./assets/img/5-opt.jpg"
-            alt=""
-          />
+          <img class="pic" src="./assets/img/5-opt.jpg" alt="" />
           <div class="initial-page__logo">
             <span
               class="
@@ -121,20 +117,6 @@ export default {
   methods: {},
 
   mounted() {
-    // setTimeout(() => {
-    //   this.initialPage = false;
-    // }, 3000);
-    // this.$router.push("/");
-    // setTimeout(() => {
-    //   this.enterName = true;
-    // }, 500);
-    // setTimeout(() => {
-    //   this.enterSurname = true;
-    // }, 1000);
-    // setTimeout(() => {
-    //   // this.exitName = true;
-    //   // this.exitSurname = true;
-    // }, 2700);
     setTimeout(() => {
       this.initialPage = false;
     }, 3000);
@@ -200,7 +182,6 @@ body {
   background-size: cover;
   min-height: 100vh;
   min-width: 100vw;
-  overflow: hidden;
 }
 
 //INITIAL SPLASH PAGE

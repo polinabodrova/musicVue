@@ -19,7 +19,7 @@
         </p>
       </div>
       <div class="home-page__main-container-img">
-        <img src="../assets/img/IMG_2086.png" alt="" />
+        <img src="../assets/img/IMG_2083.png" alt="" />
       </div>
     </div>
   </section>
@@ -33,8 +33,7 @@ export default {
     };
   },
   name: "Home",
-  components: {
-  },
+  components: {},
 
   methods: {},
 };
@@ -96,22 +95,30 @@ $greenblue: #00adb5;
     margin-left: 0;
     min-height: 500px;
   }
+
   &-img {
-    // height: 100vh;
-    // min-height: 800px;
     position: absolute;
     top: 0;
     right: 0;
     img {
       height: 100vh;
       min-height: 700px;
+      @include respond(phone) {
+        height: 95vh;
+        min-height: 400px;
+      }
     }
     @include respond(tab-land) {
-      display: none;
+      top: 0;
+      left: 0rem;
+      z-index: -2;
+      opacity: 0.3;
+    }
+    @include respond(phone) {
+      left: 0rem;
     }
   }
   &-text {
-    // font-size: 1.7rem;
     font-family: "Source Sans Pro", sans-serif;
     color: white;
     display: flex;

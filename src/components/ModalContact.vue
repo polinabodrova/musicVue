@@ -22,15 +22,51 @@ export default {
 };
 </script>
 <style lang="scss">
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    } // 600px
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    } // 900px
+  }
+  // @if $breakpoint == tab-apple {
+  //   @media (max-width: 1024px) {
+  //     @content;
+  //   } //NEW
+  // }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    } //1800
+  }
+}
 .vm--modal {
   padding: 2rem;
-  background-color: #252525 !important;
+  background-color: rgba(37, 37, 37, 0.96) !important;
   border-radius: 10px !important;
-  height: 55vh !important;
+  height: 50vh !important;
+  position: absolute !important;
+  top: 55% !important;
+  left: 50% !important;
+  transform: translate(-50%, -55%) !important;
+  @include respond(phone) {
+    width: 90% !important;
+    border-radius: 5px !important;
+    height: 43rem !important;
+  }
 }
 .vm--overlay {
   background-color: black !important;
-  opacity: 0.7 !important;
+  opacity: 0.8 !important;
 }
 .label-for-name {
   color: white;

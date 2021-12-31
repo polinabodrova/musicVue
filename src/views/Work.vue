@@ -71,7 +71,7 @@
         <div>
           <img
             class="work-page__main-music-img"
-            src="../assets/img/IMG_2083.png"
+            src="../assets/img/IMG_2086.png"
             alt=""
           />
         </div>
@@ -199,7 +199,7 @@ export default {
       const img = document.querySelector(".feedback__nameimg-img-src");
       const name = document.querySelector(".feedback__nameimg-name");
       feedbackText.innerHTML = `${el.text}`;
-      img.src = require('../assets/img/user.png');
+      img.src = require("../assets/img/user.png");
       name.innerHTML = `${el.name}`;
     },
     prevSong() {
@@ -352,7 +352,7 @@ $greenblue: #00adb5;
       height: 95vh;
       top: 4rem;
       bottom: 0;
-      right: -7rem;
+      right: -1rem;
       @include respond(tab-port) {
         display: none;
       }

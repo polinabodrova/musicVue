@@ -5,10 +5,8 @@
       <ModalContact ref="modalRef" :modificator="mod" />
       <div class="price__container">
         <div class="price__container-item" @click="show('basic')">
-          
           <div class="price__container-item-main">
-            <div class="price__container-picture picture--1">
-            </div>
+            <div class="price__container-picture picture--1"></div>
             <h3>BASIC</h3>
             <ul>
               <li>Simple demo beat</li>
@@ -20,8 +18,7 @@
         </div>
         <div class="price__container-item" @click="show('standart')">
           <div class="price__container-item-main">
-            <div class="price__container-picture picture--2">
-            </div>
+            <div class="price__container-picture picture--2"></div>
             <h3>STANDARD</h3>
             <ul>
               <li>Custom beat</li>
@@ -33,8 +30,7 @@
         </div>
         <div class="price__container-item" @click="show('premium')">
           <div class="price__container-item-main">
-            <div class="price__container-picture picture--3">
-            </div>
+            <div class="price__container-picture picture--3"></div>
             <h3>PREMIUM</h3>
             <ul>
               <li>Custom beat</li>
@@ -100,16 +96,16 @@ $greenblue: #00adb5;
     } //1800
   }
 }
-h3{
+h3 {
   color: $greenblue;
 }
 
-p{
+p {
   padding: 0.5rem;
   font-size: 2.5rem;
 }
 
-.price__container-picture{
+.price__container-picture {
   background-blend-mode: color;
   background-size: cover;
   height: 20rem;
@@ -117,18 +113,22 @@ p{
 }
 
 .picture--1 {
-  background-image: linear-gradient(to right bottom, $greenblue, $main ),url(../assets/img/guitar2.jpg);
+  background-image: linear-gradient(to right bottom, $greenblue, $main),
+    url(../assets/img/guitar2.jpg);
 }
 .picture--2 {
-  background-image: linear-gradient(to right bottom, $greenblue, $main),url(../assets/img/piano.jpg);
+  background-image: linear-gradient(to right bottom, $greenblue, $main),
+    url(../assets/img/piano.jpg);
 }
 .picture--3 {
-  background-image: linear-gradient(to right bottom, $greenblue, $main ),url(../assets/img/studio.jpg);
+  background-image: linear-gradient(to right bottom, $greenblue, $main),
+    url(../assets/img/studio.jpg);
 }
 .main-container {
   position: absolute;
   background-color: #5b6467;
-background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%),url(../assets/img/background_sasha.jpg);
+  background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%),
+    url(../assets/img/background_sasha.jpg);
   background-blend-mode: multiply;
   background-size: cover;
   min-height: 100%;
@@ -150,15 +150,15 @@ background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%),url(../assets
     flex-basis: 27rem;
     height: auto;
     margin: 3rem;
-    
+
     &:hover &-main {
       transform: translateY(-2rem);
       text-shadow: 1px 1px 7px #000000;
     }
-  
+
     &-main {
       height: 40rem;
-     background-color: #5b64679b;
+      background-color: #5b64679b;
       position: relative;
       border-radius: 4px;
       transition: 0.3s ease-in-out;
