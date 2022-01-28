@@ -321,7 +321,7 @@ nav {
     height: 0.3rem;
     background-color: #fff;
     margin: 0.5rem;
-    transition: all 0.3s ease;
+    // transition: all 0.3s ease;
   }
 }
 
@@ -344,12 +344,11 @@ nav {
     justify-content: space-evenly;
     &router-link {
       opacity: 0;
-      transition: transform 3s ease-in;
     }
   }
 
   .transform {
-    transition: transform 0.1s ease-in;
+    transition: transform 0.2s ease-in;
   }
 
   .burger {

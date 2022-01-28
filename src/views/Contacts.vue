@@ -141,6 +141,7 @@ $greenblue: #00adb5;
     width: 50%;
     position: absolute;
     top: 18rem;
+    z-index: 2;
     @include respond(tab-port) {
       width: 55%;
       top: 50%;
