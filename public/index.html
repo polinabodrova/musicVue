@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
-      content="width=device-width,initial-scale=1.0,minimum-scale=1"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <link
@@ -21,9 +21,11 @@
         enabled. Please enable it to continue.</strong
       >
     </noscript>
-    <div id="app" v-cloak>
-      <!-- <div id="loading__container">
+    <div class="wrapper">
+      <div id="app" v-cloak>
+        <!-- <div id="loading__container">
         <div>Loading...</div> -->
+      </div>
     </div>
     <style>
       *,
@@ -33,6 +35,16 @@
         padding: 0;
         box-sizing: inherit;
       }
+      body,
+      html {
+        overflow-x: hidden;
+      }
+
+      .wrapper {
+        /* overflow-x: hidden; */
+        touch-action: pan-y pinch-zoom;
+      }
+
       [v-cloak] > * {
         opacity: 0;
       }
