@@ -69,6 +69,10 @@ $greenblue: #00adb5;
     } //1800
   }
 }
+body, html {
+overflow-x: hidden;
+}
+
 .fouc {
   display: none;
 }

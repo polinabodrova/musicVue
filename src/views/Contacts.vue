@@ -125,6 +125,10 @@ $greenblue: #00adb5;
   }
 }
 
+body, html {
+overflow-x: hidden;
+}
+
 .main-container {
   overflow-x: hidden;
 }

@@ -97,6 +97,10 @@ $greenblue: #00adb5;
   }
 }
 
+body, html {
+overflow-x: hidden;
+}
+
 h3 {
   color: $greenblue;
 }
