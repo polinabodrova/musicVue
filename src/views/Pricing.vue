@@ -13,7 +13,7 @@
               <li>(up to 2 minutes)</li>
               <li>Non exclusive license</li>
             </ul>
-            <p>$30</p>
+            <p>$50</p>
           </div>
         </div>
         <div class="price__container-item" @click="show('standart')">
@@ -25,7 +25,7 @@
               <li>(up to 4 minutes)</li>
               <li>Exclusive license</li>
             </ul>
-            <p>$40</p>
+            <p>$70</p>
           </div>
         </div>
         <div class="price__container-item" @click="show('premium')">
@@ -37,7 +37,7 @@
               <li>(up to 4 minutes)</li>
               <li>Exclusive license + Stems</li>
             </ul>
-            <p>$50</p>
+            <p>$90</p>
           </div>
         </div>
       </div>

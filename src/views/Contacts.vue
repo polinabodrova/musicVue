@@ -35,7 +35,7 @@
           </a>
         </div>
         <div class="k">
-          <a href="https://www.instagram.com/gigantballs" target="_blank">
+          <a href="https://www.instagram.com/alex_naumov_prod/" target="_blank">
             <img src="../assets/img/instagram.svg" width="40" alt="" />
           </a>
         </div>
@@ -236,10 +236,9 @@ $greenblue: #00adb5;
 }
 
 .contacts-img {
-  position: absolute;
-  right: 3rem;
+  position: fixed;
   bottom: -1rem;
-  top: 6rem;
+  right: 3rem;
   @include respond(tab-port) {
     opacity: 0.25;
     left: 50%;

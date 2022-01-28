@@ -82,9 +82,7 @@
 <script>
 export default {
   name: "Work",
-  components: {
-    // HelloWorld,
-  },
+  components: {},
   data() {
     return {
       feedbacks: [
@@ -274,10 +272,12 @@ $greenblue: #00adb5;
   }
 }
 #section {
-  height: 100vh;
+  // height: 70vh;
 }
 .work-page__main {
-  width: 55%;
+  // overflow: hidden;
+  // width: 55%;
+  height: 100%;
   @include respond(tab-land) {
     width: 40%;
   }
@@ -348,10 +348,9 @@ $greenblue: #00adb5;
     align-items: center;
     &-img {
       position: absolute;
-      min-height: 750px;
       height: 95vh;
       top: 4rem;
-      bottom: 0;
+      min-height: 700px;
       right: -1rem;
       @include respond(tab-port) {
         display: none;
@@ -457,10 +456,9 @@ $greenblue: #00adb5;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
     &-img {
       margin-right: 2rem;
-      height: 10%;
+      width: 5%;
     }
   }
 }
