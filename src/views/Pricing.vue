@@ -96,6 +96,7 @@ $greenblue: #00adb5;
     } //1800
   }
 }
+
 h3 {
   color: $greenblue;
 }
@@ -103,6 +104,10 @@ h3 {
 p {
   padding: 0.5rem;
   font-size: 2.5rem;
+}
+
+#pricing {
+  overflow-x: hidden;
 }
 
 .price__container-picture {

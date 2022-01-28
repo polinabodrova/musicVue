@@ -125,8 +125,12 @@ $greenblue: #00adb5;
   }
 }
 
+.main-container {
+  overflow-x: hidden;
+}
+
 .contacts {
-  margin-left: 3rem;
+  margin-left: 7rem;
   flex-direction: row;
   font-size: 1.8rem;
   line-height: 2.8rem;
@@ -217,8 +221,8 @@ $greenblue: #00adb5;
     }
   }
   &__social {
-    position: absolute;
-    bottom: 0.5rem;
+    position: relative;
+    top: 50rem;
     display: flex;
     justify-content: center;
     width: 50%;
@@ -237,7 +241,8 @@ $greenblue: #00adb5;
 
 .contacts-img {
   position: fixed;
-  bottom: -1rem;
+  top: 5rem;
+  // bottom: 2rem;
   right: 3rem;
   @include respond(tab-port) {
     opacity: 0.25;
@@ -251,7 +256,7 @@ $greenblue: #00adb5;
   }
   img {
     height: 95vh;
-    min-height: 600px;
+    min-height: 700px;
     max-height: 950px;
     @include respond(phone) {
       height: 95vh;

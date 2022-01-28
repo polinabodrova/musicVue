@@ -271,8 +271,8 @@ $greenblue: #00adb5;
     } //1800
   }
 }
-#section {
-  // height: 70vh;
+#work {
+  overflow-x: hidden;
 }
 .work-page__main {
   // overflow: hidden;

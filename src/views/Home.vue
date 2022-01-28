@@ -74,6 +74,7 @@ $greenblue: #00adb5;
 }
 #home {
   height: 93vh;
+  overflow-x: hidden;
   @include respond(tab-land) {
     position: relative;
   }

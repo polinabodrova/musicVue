@@ -349,7 +349,7 @@ nav {
   }
 
   .transform {
-    transition: transform 0.2s ease-in;
+    transition: transform 0.1s ease-in;
   }
 
   .burger {
@@ -371,16 +371,16 @@ nav {
   transform: translateX(0%);
 }
 //NAV-LINKS ANIMATIONS
-.delay1 {
-  animation-delay: 0.1s;
-}
-.delay2 {
-  animation-delay: 0.2s;
-}
-.delay3 {
-  animation-delay: 0.3s;
-}
-.delay4 {
-  animation-delay: 0.4s;
-}
+// .delay1 {
+//   animation-delay: 0.1s;
+// }
+// .delay2 {
+//   animation-delay: 0.2s;
+// }
+// .delay3 {
+//   animation-delay: 0.3s;
+// }
+// .delay4 {
+//   animation-delay: 0.4s;
+// }
 </style>
