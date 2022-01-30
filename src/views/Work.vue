@@ -455,7 +455,7 @@ html {
     // margin-top: 5rem;
     width: 100%;
     position: relative;
-    top: 27%;
+    top: 30%;
   }
   &__text {
     text-align: center;

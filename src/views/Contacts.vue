@@ -125,21 +125,20 @@ $greenblue: #00adb5;
   }
 }
 
-body,
-html {
-  // overflow-x: hidden;
+.main-container {
+  @include respond(phone) {
+    position: relative;
+    height: 95vh;
+    overflow-x: hidden;
+  }
 }
-
-// .main-container {
-//   overflow-x: hidden;
-// }
 
 .contacts {
   margin-left: 7rem;
   flex-direction: row;
   font-size: 1.8rem;
   line-height: 2.8rem;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   &__form {
     color: white;
@@ -155,9 +154,13 @@ html {
     }
     @include respond(phone) {
       width: 90%;
+      // height: 30%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      // top: 10rem;
+      // left: 50%;
+      // transform: translate(-50%);
     }
     & p {
       margin: 1.5rem 0;
@@ -241,10 +244,9 @@ html {
       // bottom: -30rem;
     }
     @include respond(phone) {
-      // position: relative;
-      // top: 70rem;
-      // left: 50%;
-      // transform: translate(-50%);
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -90%);
     }
     & img {
       opacity: 0.7;
@@ -268,7 +270,7 @@ html {
   }
   @include respond(phone) {
     opacity: 0.25;
-    left: 10%;
+    left: 5%;
     transform: translateX(-10%);
   }
   img {
@@ -276,8 +278,9 @@ html {
     min-height: 700px;
     max-height: 950px;
     @include respond(phone) {
-      height: 95vh;
-      max-height: 790px;
+      overflow: hidden;
+      // height: 95vh;
+      // max-height: 790px;
     }
   }
 }
