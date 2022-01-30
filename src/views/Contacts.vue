@@ -125,13 +125,14 @@ $greenblue: #00adb5;
   }
 }
 
-body, html {
-overflow-x: hidden;
+body,
+html {
+  // overflow-x: hidden;
 }
 
-.main-container {
-  overflow-x: hidden;
-}
+// .main-container {
+//   overflow-x: hidden;
+// }
 
 .contacts {
   margin-left: 7rem;
@@ -232,7 +233,18 @@ overflow-x: hidden;
     justify-content: center;
     width: 50%;
     @include respond(tab-port) {
-      width: 100%;
+      position: absolute;
+      top: 95%;
+      left: 50%;
+      transform: translate(-50%, -95%);
+      // top: 0;
+      // bottom: -30rem;
+    }
+    @include respond(phone) {
+      // position: relative;
+      // top: 70rem;
+      // left: 50%;
+      // transform: translate(-50%);
     }
     & img {
       opacity: 0.7;

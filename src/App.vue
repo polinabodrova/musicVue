@@ -177,7 +177,7 @@ body {
   font-weight: 400;
   line-height: 1.7;
   font-family: "Lato", sans-serif;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   background-image: url(./assets/img/peter-unsplash.jpg);
   background-size: cover;
   min-height: 100vh;
@@ -327,7 +327,7 @@ nav {
 
 @media screen and (max-width: 908px) {
   body {
-    overflow-x: hidden;
+    // overflow-x: hidden;
   }
   .nav-links {
     width: 100%;
@@ -336,12 +336,10 @@ nav {
     height: 100vh;
     top: 0vh;
     background-color: black;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     transform: translateX(100%);
     z-index: 3;
-    justify-content: space-evenly;
+    display: none;
     &router-link {
       opacity: 0;
     }
@@ -368,6 +366,10 @@ nav {
 }
 .nav-active {
   transform: translateX(0%);
+  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 //NAV-LINKS ANIMATIONS
 // .delay1 {

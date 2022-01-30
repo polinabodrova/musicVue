@@ -69,18 +69,18 @@ $greenblue: #00adb5;
     } //1800
   }
 }
-body, html {
-overflow-x: hidden;
-}
+// body, html {
+// overflow-x: hidden;
+// }
 
 .fouc {
   display: none;
 }
 #home {
   height: 93vh;
-  overflow-x: hidden;
   @include respond(tab-land) {
     position: relative;
+    overflow: hidden;
   }
 }
 .home-page__main-container {

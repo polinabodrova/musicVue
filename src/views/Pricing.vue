@@ -97,8 +97,9 @@ $greenblue: #00adb5;
   }
 }
 
-body, html {
-overflow-x: hidden;
+body,
+html {
+  // overflow-x: hidden;
 }
 
 h3 {
@@ -110,8 +111,12 @@ p {
   font-size: 2.5rem;
 }
 
+ul {
+  list-style-type: none;
+}
+
 #pricing {
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 .price__container-picture {
@@ -175,7 +180,7 @@ p {
       text-align: center;
       color: white;
       text-shadow: 1px 1px 1px #292c32;
-      overflow: hidden;
+      // overflow: hidden;
       @include respond(tab-port) {
       }
     }

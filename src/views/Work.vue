@@ -3,7 +3,7 @@
     <logo-section />
     <div class="work-page__main">
       <div class="work-page__main-animation">
-        <div class="work-page__main-animation-block1 round"></div>
+        <!-- <div class="work-page__main-animation-block1 round"></div> -->
         <div class="work-page__main-animation-block2 round"></div>
         <div class="work-page__main-animation-block3 round"></div>
         <div class="player">
@@ -59,7 +59,7 @@
               <img
                 class="feedback__nameimg-img-src"
                 src="../assets/img/user.png"
-                width="50"
+                width="40"
                 alt=""
               />
             </div>
@@ -176,7 +176,7 @@ export default {
       //
     },
     animationLoop() {
-      if (!this.$refs.audio.paused) {
+      if (!this.$refs.audio?.paused) {
         window.requestAnimationFrame(this.animationLoop);
       }
       let array = new Uint8Array(this.analyzer.frequencyBinCount);
@@ -233,9 +233,12 @@ export default {
     },
     onTimeUpdateListener(e) {
       const { duration, currentTime } = e.target;
-      const progressPercent = (currentTime * 100) / duration;
-      const line = document.querySelector(".player__main-progress-line");
-      line.style.width = `${progressPercent}%`;
+      let progressPercent = (currentTime * 100) / duration;
+      if (document.querySelector(".player__main-progress-line")) {
+        document.querySelector(
+          ".player__main-progress-line"
+        ).style.width = `${progressPercent}%`;
+      } else return;
     },
     setProgress(e) {
       const width = this.$refs.progressBar.clientWidth;
@@ -272,13 +275,14 @@ $greenblue: #00adb5;
   }
 }
 
-body, html {
-overflow-x: hidden;
+body,
+html {
+  // overflow-x: hidden;
 }
 
-#work {
-  overflow-x: hidden;
-}
+// #work {
+//   // overflow-x: hidden;
+// }
 .work-page__main {
   // overflow: hidden;
   // width: 55%;
@@ -299,22 +303,21 @@ overflow-x: hidden;
     width: 80%;
     left: -15rem;
     @include respond(tab-port) {
+      top: 0;
+      bottom: 0;
+      margin: auto;
       position: absolute;
-      margin-left: 0;
-      left: 50%;
-      top: 47%;
-      transform: translate(-50%, -50%);
+      left: 0;
+      right: 0;
     }
-    @include respond(phone) {
-      position: absolute;
-      margin-left: 0;
-      left: 50%;
-      top: 55%;
-      transform: translate(-50%, -50%);
-    }
-    @include respond(phone) {
-      margin-top: 2rem;
-    }
+    // @include respond(phone) {
+    //   position: absolute;
+    //   margin-left: 0;
+    //   left: 50%;
+    //   top: 55%;
+    //   transform: translate(-50%, -50%);
+    //   margin-top: 2rem;
+    // }
   }
   &-animation-block1 {
     width: 40rem;
@@ -380,14 +383,19 @@ overflow-x: hidden;
   position: relative;
   top: 6rem;
   @include respond(tab-land) {
-    margin-bottom: -3rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
   }
   &-img {
     // position: relative;
     object-fit: cover;
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
     border-radius: 2rem;
     border: solid 0.2rem white;
     box-shadow: 0 0 0.5rem white;
@@ -413,7 +421,7 @@ overflow-x: hidden;
       cursor: pointer;
       &-line {
         appearance: none;
-        overflow: hidden;
+        // overflow: hidden;
         height: 0.5rem;
         background: $greenblue;
         border-radius: 3rem;
@@ -444,16 +452,17 @@ overflow-x: hidden;
   font-size: 1.7rem;
   margin-top: 6rem;
   @include respond(tab-port) {
-    margin-top: 5rem;
+    // margin-top: 5rem;
     width: 100%;
+    position: relative;
+    top: 27%;
   }
   &__text {
     text-align: center;
     margin-top: 2rem;
     @include respond(tab-land) {
       margin-top: 4.5rem;
-    }
-    @include respond(phone) {
+      margin-bottom: 1rem;
     }
   }
   &__nameimg {
@@ -463,7 +472,10 @@ overflow-x: hidden;
     align-items: center;
     &-img {
       margin-right: 2rem;
-      width: 5%;
+      // width: 2%;
+      @include respond(phone) {
+        // margin-right: 7rem;
+      }
     }
   }
 }

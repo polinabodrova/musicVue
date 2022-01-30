@@ -35,14 +35,13 @@
         padding: 0;
         box-sizing: inherit;
       }
-      body,
-      html {
-        overflow-x: hidden;
+      body {
+        overscroll-behavior: none;
       }
 
       .wrapper {
         /* overflow-x: hidden; */
-        touch-action: pan-y pinch-zoom;
+        /* touch-action: pan-y pinch-zoom; */
       }
 
       [v-cloak] > * {
