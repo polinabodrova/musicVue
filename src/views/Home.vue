@@ -174,4 +174,23 @@ $greenblue: #00adb5;
     }
   }
 }
+@media screen and (min-height: 300px) and (orientation: landscape) {
+  #home {
+    height: 85vh;
+  }
+  .home-page__main-container {
+    min-height: 900px;
+  }
+  .home-page__main-container-text {
+    width: 80%;
+  }
+  .home-page__main-container-img {
+    left: 10rem;
+    top: 2rem;
+  }
+
+  .home-page__main-container-text-p {
+    margin-top: 0;
+  }
+}
 </style>

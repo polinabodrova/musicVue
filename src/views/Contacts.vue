@@ -155,9 +155,9 @@ $greenblue: #00adb5;
     @include respond(phone) {
       width: 90%;
       // height: 30%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
       // top: 10rem;
       // left: 50%;
       // transform: translate(-50%);
@@ -282,6 +282,11 @@ $greenblue: #00adb5;
       // height: 95vh;
       // max-height: 790px;
     }
+  }
+}
+@media screen and (min-height: 300px) and (orientation: landscape) {
+  .main-container {
+    height: 80rem;
   }
 }
 </style>

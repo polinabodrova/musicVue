@@ -275,11 +275,6 @@ $greenblue: #00adb5;
   }
 }
 
-body,
-html {
-  // overflow-x: hidden;
-}
-
 // #work {
 //   // overflow-x: hidden;
 // }
@@ -486,5 +481,14 @@ html {
 
 .active {
   display: block;
+}
+
+@media screen and (min-height: 300px) and (orientation: landscape) {
+  .player {
+    top: 20rem;
+  }
+  .feedback {
+    top: 70%;
+  }
 }
 </style>

@@ -187,4 +187,9 @@ ul {
     }
   }
 }
+@media screen and (min-height: 300px) and (orientation: landscape) {
+  .price__container {
+    margin-top: 10rem;
+  }
+}
 </style>
