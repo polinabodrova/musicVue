@@ -1,7 +1,7 @@
 <template>
   <section id="pricing">
     <logo-section />
-    <div class="main-container">
+    <div class="main-container-price">
       <ModalContact ref="modalRef" :modificator="mod" />
       <div class="price__container">
         <div class="price__container-item" @click="show('basic')">
@@ -115,9 +115,10 @@ ul {
   list-style-type: none;
 }
 
-#pricing {
-  // overflow-x: hidden;
-}
+// .main-container-price {
+//   overflow: scroll !important;
+//   // overflow-x: hidden;
+// }
 
 .price__container-picture {
   background-blend-mode: color;
@@ -157,7 +158,7 @@ ul {
   flex-wrap: wrap;
   cursor: pointer;
   @include respond(tab-port) {
-    margin-top: 20rem;
+    // margin-top: 20rem;
   }
   &-item {
     position: relative;

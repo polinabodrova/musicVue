@@ -127,9 +127,9 @@ $greenblue: #00adb5;
 
 .main-container {
   @include respond(phone) {
-    position: relative;
-    height: 95vh;
-    overflow-x: hidden;
+    // position: relative;
+    // height: 95vh;
+    // overflow-x: hidden;
   }
 }
 
