@@ -211,8 +211,8 @@ body {
   animation-name: fade-in;
   animation-duration: 3.5s;
   animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
-  // animation: fade-in 0.2s forwards;
-  // opacity: 0;
+  animation: fade-in 0.2s forwards;
+  opacity: 0;
 }
 
 @keyframes fade-in {
@@ -321,14 +321,11 @@ nav {
     height: 0.3rem;
     background-color: #fff;
     margin: 0.5rem;
-    // transition: all 0.3s ease;
+    transition: all 0.3s ease;
   }
 }
 
 @media screen and (max-width: 908px) {
-  body {
-    // overflow-x: hidden;
-  }
   .nav-links {
     width: 100%;
     position: absolute;

@@ -139,7 +139,7 @@ ul {
   background-image: linear-gradient(to right bottom, $greenblue, $main),
     url(../assets/img/studio.jpg);
 }
-.main-container {
+.main-container-price {
   position: absolute;
   background-color: #5b6467;
   background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%),
@@ -187,7 +187,7 @@ ul {
     }
   }
 }
-@media screen and (min-height: 300px) and (orientation: landscape) {
+@media screen and (max-height: 500px) and (orientation: landscape) {
   .price__container {
     margin-top: 10rem;
   }

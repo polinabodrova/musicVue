@@ -77,17 +77,17 @@ $greenblue: #00adb5;
   display: none;
 }
 #home {
-  height: 93vh;
+  height: 92vh;
+  overflow: hidden;
   @include respond(tab-land) {
     position: relative;
-    overflow: hidden;
   }
 }
 .home-page__main-container {
   width: 55%;
   display: flex;
   height: 99%;
-  min-height: 700px;
+  min-height: 800px;
   background-color: rgba(250, 249, 254, 0.1);
   margin-left: 1rem;
 
@@ -105,9 +105,12 @@ $greenblue: #00adb5;
     position: absolute;
     top: 0;
     right: 0;
+    min-height: 800px;
+    height: 100vh;
     img {
-      height: 100vh;
-      min-height: 700px;
+      min-height: 100%;
+      // height: 99vh;
+      // min-height: 800px;
       @include respond(phone) {
         height: 95vh;
         min-height: 400px;
@@ -174,7 +177,7 @@ $greenblue: #00adb5;
     }
   }
 }
-@media screen and (min-height: 300px) and (orientation: landscape) {
+@media screen and (max-height: 500px) and (orientation: landscape) {
   #home {
     height: 85vh;
   }

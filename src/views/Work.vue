@@ -275,11 +275,11 @@ $greenblue: #00adb5;
   }
 }
 
-// #work {
-//   // overflow-x: hidden;
-// }
+#work {
+  overflow: hidden;
+}
 .work-page__main {
-  // overflow: hidden;
+  overflow: hidden;
   // width: 55%;
   height: 100%;
   @include respond(tab-land) {
@@ -483,7 +483,7 @@ $greenblue: #00adb5;
   display: block;
 }
 
-@media screen and (min-height: 300px) and (orientation: landscape) {
+@media screen and (max-height: 500px) and (orientation: landscape) {
   .player {
     top: 20rem;
   }

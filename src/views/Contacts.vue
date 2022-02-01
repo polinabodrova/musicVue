@@ -284,7 +284,7 @@ $greenblue: #00adb5;
     }
   }
 }
-@media screen and (min-height: 300px) and (orientation: landscape) {
+@media screen and (max-height: 500px) and (orientation: landscape) {
   .main-container {
     height: 80rem;
   }

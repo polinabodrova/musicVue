@@ -39,6 +39,7 @@
       html {
         scrollbar-width: none; /* For Firefox */
         -ms-overflow-style: none; /* For Internet Explorer and Edge */
+        overflow: hidden;
       }
 
       html::-webkit-scrollbar {
@@ -47,8 +48,14 @@
 
       body {
         overscroll-behavior: none;
-        position: relative;
+        /* position: relative; */
+        /* overflow: hidden; */
       }
+
+      /* html,
+      body {
+        overflow: hidden;
+      } */
 
       [v-cloak] > * {
         opacity: 0;
