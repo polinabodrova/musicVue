@@ -133,7 +133,7 @@ export default {
 
   methods: {
     onResize() {
-      if (window.innerHeight / 2 > window.innerWidth) {
+      if (window.innerHeight / 0.8 > window.innerWidth) {
         console.log("mobile");
         this.mobileVersion = true;
       } else this.mobileVersion = false;
@@ -154,14 +154,27 @@ export default {
       this.slides = [last].concat(this.slides);
     },
   },
-  created() {
+  mounted() {
     window.addEventListener("resize", this.onResize);
-    let isMobile = /iPhone|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      /* your code here */
+    if (window.innerHeight / 0.8 > window.innerWidth) {
+      console.log("this is mobile");
       this.mobileVersion = true;
-      console.log("this is mobile here");
+    } else {
+      // const priceCont = document.querySelector(".price__container");
+      // priceCont.style.overflow = "scroll";
+      document.body.style.overflowY = "scroll";
+      this.mobileVersion = false;
     }
+
+    // let isMobile = /iPhone|Android/i.test(navigator.userAgent);
+    // if (isMobile) {
+    //   /* your code here */
+    //   this.mobileVersion = true;
+    //   console.log("this is mobile here");
+    // }
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.onResize);
   },
 };
 </script>
@@ -221,7 +234,7 @@ $greenblue: #00adb5;
   height: 60vh;
   align-items: center;
   // padding: 50px 0;
-  transition: all 0.2s;
+
   background: transparent;
   margin: 20px 0;
 }
