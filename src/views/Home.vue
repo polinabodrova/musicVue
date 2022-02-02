@@ -14,7 +14,7 @@
             Alex
           </span>
           is a freelance music producer and beatmaker. His experience and
-          inspiration is what makes his beats unique and colorful. The beats he
+          inspiration are what make his beats unique and colorful. The beats he
           creates are thoughtfully handcrafted and tailored for you.
         </p>
       </div>
@@ -79,6 +79,9 @@ $greenblue: #00adb5;
 #home {
   height: 92vh;
   overflow: hidden;
+  @include respond(tab-port) {
+    height: 95vh;
+  }
   @include respond(tab-land) {
     position: relative;
   }

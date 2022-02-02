@@ -377,7 +377,8 @@ $greenblue: #00adb5;
   // height: 79%;
   position: relative;
   top: 6rem;
-  @include respond(tab-land) {
+
+  @include respond(tab-port) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -446,6 +447,9 @@ $greenblue: #00adb5;
   width: 60%;
   font-size: 1.7rem;
   margin-top: 6rem;
+  // @include respond(tab-land) {
+  //   width: 50%;
+  // }
   @include respond(tab-port) {
     // margin-top: 5rem;
     width: 100%;

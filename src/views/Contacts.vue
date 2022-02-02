@@ -231,7 +231,7 @@ $greenblue: #00adb5;
   }
   &__social {
     position: relative;
-    top: 50rem;
+    top: 48rem;
     display: flex;
     justify-content: center;
     width: 50%;

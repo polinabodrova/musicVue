@@ -62,6 +62,9 @@ export default {
     width: 90% !important;
     border-radius: 5px !important;
     height: 43rem !important;
+    // top: 45% !important;
+    // left: 40% !important;
+    // transform: translate(-40%, -45%) !important;
   }
 }
 .vm--overlay {
