@@ -234,7 +234,7 @@ $greenblue: #00adb5;
   height: 60vh;
   align-items: center;
   // padding: 50px 0;
-
+  transition: all 0.3s;
   background: transparent;
   margin: 20px 0;
 }
@@ -259,7 +259,7 @@ $greenblue: #00adb5;
 
 .carousel-item {
   width: 100%;
-  height: 100%;
+  // height: 100%;
   background-color: #5b64679b;
   position: relative;
   border-radius: 4px;
@@ -292,7 +292,7 @@ h3 {
 }
 
 p {
-  padding: 0.5rem;
+  padding: 1rem;
   font-size: 2.5rem;
 }
 
